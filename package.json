@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-delog",
-  "description": "A simplified blog for developers and designer. This starter built with Gatsby and Netlify CMS",
-  "author": "W3Layouts Team <info@w3layouts.com>",
+  "name": "personal-website",
+  "description": "Zhanar Osmonaliev's personal blog.",
+  "author": "Zhanarbek Osmonaliev",
   "version": "1.6.0",
   "license": "MIT",
   "bugs": {
