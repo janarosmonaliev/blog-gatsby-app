@@ -1,9 +1,9 @@
 {
-  "title": "Delog",
+  "title": "Zhanarbek Osmonaliev's Blog",
   "siteUrl": "https://delog-w3layouts.netlify.com/",
-  "description": "Delog, a GatsbyJS and Netlify CMS starter for Designers and Developers",
+  "description": "Personal website where I share my ideas with the world.",
   "home": {
-    "title": "Hi! I'm Delog",
-    "description": "I have been specifically designed to become a digital home for designers and developers, help them build amazing professional looking websites with ease. You don't have to worry about nitty gritty of web hosting services to run a blog and yet take full advantage of CMS to manage content :)"
+    "title": "Hi! I'm Zhanar Osmonaliev",
+    "description": "I am a Computer Science student at StonyBrook University. Here I share my stories and ideas with the world"
   }
 }
