@@ -1,8 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Button, Paper, Box } from "@material-ui/core";
-import { ThemeProvider, makeStyles } from "@material-ui/core/styles";
-import { Link, useStaticQuery } from "gatsby";
-import Logo from "../images/janarosmo-logo-lg.svg";
+import { Link } from "gatsby";
 import Navigation from "../components/navigation";
 import LogoSVG from "../components/LogoSvg";
 

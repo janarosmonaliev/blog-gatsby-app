@@ -2,15 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import ThemeChanger from "../components/themeChanger";
 import ResumeMenu from "../components/resumeMenu";
-import { AppBar, Toolbar, Button, Paper, Box } from "@material-ui/core";
-import { ThemeProvider, makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles({
-  logo: {
-    height: "40px",
-    marginTop: "4px",
-  },
-});
+import { Button, Box } from "@material-ui/core";
 
 export default (props) => (
   <nav className="navigation">
@@ -26,6 +18,4 @@ export default (props) => (
     </Box>
     <ThemeChanger />
   </nav>
-  //   <Toolbar px={0}>
-  // </Toolbar>
 );

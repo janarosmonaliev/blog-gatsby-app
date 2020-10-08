@@ -9,7 +9,6 @@ import IconButton from "@material-ui/core/IconButton";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import { makeStyles } from "@material-ui/core/styles";
 import Resume from "../images/janarosmo-resume.jpg";
-import Box from "@material-ui/core/Box";
 import { X } from "react-feather";
 import MenuItem from "@material-ui/core/MenuItem";
 import red from "@material-ui/core/colors/red";
@@ -74,7 +73,7 @@ export default function ModalResume() {
         <DialogContent>
           <Grid container>
             <Grid item xs={12}>
-              <img src={Resume} className={classes.resume}></img>
+              <img src={Resume} className={classes.resume} alt="Resume"></img>
             </Grid>
           </Grid>
         </DialogContent>

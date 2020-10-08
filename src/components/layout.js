@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import Navigation from "../components/navigation";
+import { useStaticQuery, graphql } from "gatsby";
 import "prismjs/themes/prism-okaidia.css";
 import Navbar from "../components/appBar";
 

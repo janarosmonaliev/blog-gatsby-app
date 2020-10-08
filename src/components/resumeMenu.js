@@ -80,7 +80,7 @@ export default function ResumeMenu() {
               }
               target="_blank"
               download
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               Download
             </a>
