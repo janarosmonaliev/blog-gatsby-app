@@ -3,7 +3,7 @@ template: BlogPost
 path: /fillerama
 date: 2020-02-20T14:59:36.571Z
 title: Typography Guide
-thumbnail: /assets/Instagram (5 of 6).jpg
+thumbnail: /assets/Instagram-9974.jpg
 ---
 # No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister.
 
