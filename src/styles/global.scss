@@ -67,7 +67,7 @@ a {
   }
 }
 .site-wrapper {
-  padding: 32px;
+  padding: 32px 16px;
   max-width: 1140px;
   margin: 0 auto;
   img {
@@ -107,9 +107,13 @@ a {
 }
 .site-header {
   display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
+  padding: 5px;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
   background: var(--site-header);
+  justify-content: space-between;
   margin-bottom: 32px;
   align-items: center;
 }
@@ -311,6 +315,12 @@ a {
 }
 /* Portrait and Landscape */
 @media only screen and (min-width: 768px) {
+  .site-header {
+    padding: 20px 0;
+  }
+  .site-wrapper {
+    padding: 32px;
+  }
   .grids {
     grid-template-columns: 1fr 1fr;
   }
