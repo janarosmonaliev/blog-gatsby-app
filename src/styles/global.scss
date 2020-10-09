@@ -74,6 +74,7 @@ a {
     max-width: 100%;
   }
 }
+
 .navigation {
   display: flex;
   align-items: center;
@@ -116,6 +117,9 @@ a {
   justify-content: space-between;
   margin-bottom: 32px;
   align-items: center;
+}
+.site-header::-webkit-scrollbar {
+  display: none;
 }
 .site-title a {
   color: var(--primary-color);
