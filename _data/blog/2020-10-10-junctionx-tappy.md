@@ -17,8 +17,6 @@ In essence, we are taking something that’s a small part of other messaging sys
 
 Although fundamentally the app might seem simple, we want to take significant measures to shape the kinds of interactions that occur on our system. We want people to engage with the app without any sense of obligation or pressure. With other social media apps, it’s impossible to just send a simple “hi” or an emoji without both sides feeling the pressure to engage in conversation. Instead, when someone uses our app we want them to just simply share with the other person that you were thinking about them. All the emoticons that can be sent are chosen to express positive, prosocial feelings while remaining subtle in design. This also helps people of certain cultures who may be uncomfortable with more overt displays of emotion, express how they feel. It validates their experience as valid.
 
-
-
 Apart from the emotional aspect, we also had implementation details to consider. We wanted all our functionality to be incredibly simple to understand and use. When you open the app, you immediately see a list of your contacts at the top and the emojis that you can send at the bottom. Then it’s just a matter of selecting the recipient, choosing the emoji, then sending it off to him. The minimalism is deliberate. We don’t want this to become another social media app where one might feel obligated to engage in conversation or trade emojis out of politeness. If our app has anything, it’s the feeling of authenticity and spontaneity and temporality. Experiencing the moment as it is. The color palette was chosen for it’s muted tones. It’s meant to appear approachable and gentle.
 
 To add other users, we allow the user to send an invitation through another messaging app for the sake of ease of use, but once that has been done they can communicate through the app. This app isn’t meant to replace traditional conversation, but supplement that context surrounding it.
@@ -29,7 +27,7 @@ Backend is deployed as a Node.js + Express app on Azure. We will also be using C
 
 ## Presentation at JunctionX Asia
 
-<iframe width="100%" src="https://www.youtube.com/embed/HNfu-DkWos4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/HNfu-DkWos4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Future plans
 
