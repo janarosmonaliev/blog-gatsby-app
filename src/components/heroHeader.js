@@ -21,12 +21,12 @@ export default () => {
         <div className="hero-header">
           <Grid
             container
-            spacing={10}
+            spacing={5}
             direction="row"
             justify="flex-start"
             alignItems="center"
           >
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={7} className="headline-wrapper">
               <div className="headline">
                 {data.site.siteMetadata.home.title}
               </div>
@@ -40,7 +40,14 @@ export default () => {
                 Get in touch &rarr;
               </Link>
             </Grid>
-            <Grid item alignItems="center" justify="center">
+            <Grid
+              item
+              xs={12}
+              md
+              alignItems="center"
+              justify="center"
+              className="avatar-wrapper"
+            >
               <img
                 src={Avatar}
                 className="img-avatar"
