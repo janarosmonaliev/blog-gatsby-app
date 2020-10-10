@@ -8,7 +8,7 @@ import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import { makeStyles } from "@material-ui/core/styles";
-import Resume from "../images/janarosmo-resume.jpg";
+import Resume from "../images/resume.png";
 import { X } from "react-feather";
 import MenuItem from "@material-ui/core/MenuItem";
 import red from "@material-ui/core/colors/red";
@@ -16,7 +16,7 @@ import red from "@material-ui/core/colors/red";
 const useStyles = makeStyles({
   resume: {
     maxWidth: "100%",
-    // height: "auto",
+    height: "auto",
     objectFit: "contain",
   },
   closeButton: {

@@ -75,9 +75,7 @@ export default function ResumeMenu() {
           <MenuItem>
             <a
               className={classes.link}
-              href={
-                process.env.PUBLIC_URL + "/files/Osmonaliev-Zhanarbek-CV.pdf"
-              }
+              href={"/assets/Osmonaliev-Zhanarbek-CV.pdf"}
               target="_blank"
               download
               rel="noopener noreferrer"
