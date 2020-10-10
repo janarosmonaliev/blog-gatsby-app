@@ -1,9 +1,9 @@
 {
-  "title": "Blog",
+  "title": "Personal Blog",
   "siteUrl": "https://janarosmonaliev.com",
   "description": "Personal website where I share my ideas with the world.",
   "home": {
     "title": "Hi! I'm Zhanar Osmonaliev",
-    "description": "I am a Computer Science student at StonyBrook University. Here I share my stories and ideas with the world"
+    "description": "Welcome to my personal blog. Here I share my stories and ideas with the world. I am very passionate about programming and design. Currently, I am a CS student at StonyBrook University."
   }
 }
