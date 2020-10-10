@@ -1,7 +1,7 @@
 ---
 template: BlogPost
 path: /building-a-blog
-date: 2020-02-20T14:59:36.571Z
+date: 2020-10-10T14:59:36.571Z
 title: Building a blog
 thumbnail: /assets/Instagram-9974.jpg
 ---
