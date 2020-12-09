@@ -1,7 +1,7 @@
 ---
 template: BlogPost
 path: /thoughts-on-activity-tracking
-date: 2020-09-01T13:46:34.390Z
+date: 2020-10-30T13:46:34.390Z
 title: Browser Cookies and Privacy
 metaDescription: Is online activity a privacy threat?
 thumbnail: /assets/laptop-on-table.png
