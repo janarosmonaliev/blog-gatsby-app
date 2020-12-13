@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap");
 $font-family: "Rubik", sans-serif;
 
 html,
@@ -255,7 +255,7 @@ a {
   border: 1px solid var(--card-bdr);
   box-shadow: 0 0 30px var(--card-shadow);
   overflow: hidden;
-  line-height: 1.5;
+  line-height: 1.2;
   &:hover .post-link {
     color: var(--primary-color);
   }
@@ -263,17 +263,19 @@ a {
     display: block;
   }
   > header {
-    padding: 24px;
+    padding: 20px;
   }
   > h2:first-child {
     margin: 0 0 0.5rem 0;
   }
   .post-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    // letter-spacing: 1px;
   }
   .post-meta {
-    font-weight: 100;
+    font-weight: 300;
     margin-bottom: 0;
   }
   .post-link {
