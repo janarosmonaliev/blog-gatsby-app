@@ -2,9 +2,12 @@
 template: BlogPost
 path: /building-a-blog
 date: 2020-10-10T14:59:36.571Z
-title: Building a blog
+title: Discovering Gatsby.js. How and why this blog was built.
+metaDescription: >-
+  I have used Gatsby.js to build my own blog to share my ideas and stories with
+  the world.
 flair: Development
-thumbnail: /assets/Instagram-9974.jpg
+thumbnail: /assets/blogpost-1-cover.jpg
 ---
 # This is my first post here.
 
