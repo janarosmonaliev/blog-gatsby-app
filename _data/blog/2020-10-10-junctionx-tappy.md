@@ -3,6 +3,7 @@ template: BlogPost
 path: /junctionx-tappy
 date: 2020-10-08T12:24:50.603Z
 title: JunctionX - Tappy
+flair: Development
 thumbnail: /assets/STUCK JunctionX 2020.jpg
 ---
 ## Introduction
