@@ -26,20 +26,6 @@ export default () => {
             justify="flex-start"
             alignItems="center"
           >
-            <Grid item xs={12} md={7} className="headline-wrapper">
-              <div className="headline">
-                {data.site.siteMetadata.home.title}
-              </div>
-              <div
-                className="primary-content"
-                dangerouslySetInnerHTML={{
-                  __html: data.site.siteMetadata.home.description,
-                }}
-              />
-              <Link to="/contact" className="button -primary">
-                Get in touch &rarr;
-              </Link>
-            </Grid>
             <Grid
               item
               xs={12}
@@ -56,6 +42,20 @@ export default () => {
                 height="250px"
                 alt="avatar"
               ></img>
+            </Grid>
+            <Grid item xs={12} md={7} className="headline-wrapper">
+              <div className="headline">
+                {data.site.siteMetadata.home.title}
+              </div>
+              <div
+                className="primary-content"
+                dangerouslySetInnerHTML={{
+                  __html: data.site.siteMetadata.home.description,
+                }}
+              />
+              <Link to="/contact" className="button -primary">
+                Get in touch &rarr;
+              </Link>
             </Grid>
           </Grid>
         </div>

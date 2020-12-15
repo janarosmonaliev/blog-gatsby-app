@@ -59,6 +59,10 @@ collections:
         name: metaDescription
         widget: text
         required: false
+      - label: Flair
+        name: flair
+        widget: text
+        required: false
       - label: Featured Image
         name: thumbnail
         widget: image
