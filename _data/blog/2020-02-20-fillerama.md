@@ -3,6 +3,7 @@ template: BlogPost
 path: /building-a-blog
 date: 2020-10-10T14:59:36.571Z
 title: Building a blog
+flair: Development
 thumbnail: /assets/Instagram-9974.jpg
 ---
 # This is my first post here.
