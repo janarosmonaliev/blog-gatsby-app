@@ -13,7 +13,7 @@ const PostLink = ({ post }) => (
     </Link>
     <header>
       <div className="post-meta">
-        {post.frontmatter.flair} &#183; {post.frontmatter.date}
+        <span>{post.frontmatter.flair}</span> &#183; {post.frontmatter.date}
       </div>
       <h2 className="post-title">
         <Link to={post.frontmatter.path} className="post-link">

@@ -31,22 +31,31 @@ const ContactPage = ({ data: { site } }) => {
           {/* <p>Let me help you kick start your next project &rarr;</p> */}
         </div>
         <div>
-          <form className="form-container" method="post" data-netlify="true">
+          <form
+            className="form-container"
+            action="https://sendmail.w3layouts.com/SubmitContactForm"
+            method="post"
+          >
             <div>
               <label htmlFor="Name">Name</label>
-              <input type="text" name="Name" id="Name" />
+              <input type="text" name="w3lName" id="Name" required />
             </div>
             <div>
               <label htmlFor="Sender">Email</label>
-              <input type="email" name="Sender" id="Sender" />
+              <input type="email" name="w3lSender" id="Sender" required />
             </div>
             <div>
               <label htmlFor="Subject">Subject</label>
-              <input type="text" name="Subject" id="Subject" />
+              <input type="text" name="w3lSubject" id="Subject" />
             </div>
             <div>
               <label htmlFor="Message">Message</label>
-              <textarea name="Message" id="Message"></textarea>
+              <textarea
+                name="w3lMessage"
+                id="Message"
+                type="text"
+                required
+              ></textarea>
             </div>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <input

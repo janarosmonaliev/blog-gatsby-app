@@ -32,7 +32,8 @@ body.light {
   --contact-bg: #f7f8fe;
   --contact-bdr: #d3d6e7;
   --input-bg: var(--background);
-  --flair-color: #919eab;
+  --flair-color: #758695;
+  --complimentary-color: #ff642e;
 }
 body.dark {
   --primary-color: #8862f8;
@@ -56,6 +57,7 @@ body.dark {
   --contact-bdr: var(--card-bg);
   --input-bg: var(--card-bg);
   --flair-color: #c4cdd5;
+  --complimentary-color: #ffb85c;
 }
 /* System Fonts as used by Medium and WordPress */
 body {
@@ -92,6 +94,7 @@ a {
     }
   }
 }
+
 .nav-button {
   color: var(--text-color);
   text-decoration: none;
@@ -153,7 +156,7 @@ a {
   order: 1;
 }
 .button {
-  padding: 18px 27px;
+  padding: 20px 27px;
   display: inline-block;
   background: var(--btn-bg);
   border: 1px solid var(--btn-bdr);
@@ -268,30 +271,40 @@ a {
     display: block;
   }
   > header {
-    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 25px;
   }
   // > h2:first-child {
   //   margin: 0 0 0.5rem 0;
   // }
   .post-title {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
     margin-bottom: 0rem;
     font-weight: 500;
     // letter-spacing: 1px;
   }
   .post-meta {
     font-weight: 400;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
     color: var(--flair-color);
   }
   .post-link {
     color: var(--text-color);
     text-decoration: none;
+    transition: color 0.3s;
   }
 }
 .post-meta {
   font-size: 0.8rem;
   color: var(--text-secondary-color);
+  > span {
+    color: var(--complimentary-color);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
 }
 .site-footer {
   text-align: center;
