@@ -21,7 +21,7 @@ const ContactPage = ({ data: { site } }) => {
       </IconButton> */}
       <div className="two-grids -contact">
         <div
-          className="post-thumbnail"
+          className="post-thumbnail-contact"
           style={{
             backgroundImage: `url('/assets/contact-img.jpg')`,
             marginBottom: 0,
@@ -58,11 +58,13 @@ const ContactPage = ({ data: { site } }) => {
               ></textarea>
             </div>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <input
+              <button
                 type="submit"
                 className="button -primary"
                 style={{ marginRight: 0 }}
-              />
+              >
+                Submit
+              </button>
             </div>
           </form>
         </div>
