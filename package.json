@@ -9,8 +9,9 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "feather-icons": "^4.28.0",
-    "gatsby": "^2.24.69",
+    "gatsby": "^2.29.1",
     "gatsby-plugin-dark-mode": "^1.1.1",
     "gatsby-plugin-google-analytics": "^2.3.17",
     "gatsby-plugin-manifest": "^2.4.1",
@@ -29,7 +30,8 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-feather": "^2.0.8",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-hook-form": "^6.13.1"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
