@@ -44,13 +44,17 @@ export default function ContactPage({ data: { site } }) {
         cache: "no-cache",
         credentials: "include",
         body: JSON.stringify(data),
+        redirect: "manual",
         headers: {
           Accept: "application/json",
           "Content-type": "application/json; charset=UTF-8",
         },
+      }).then(() => {
+        console.log("Message sent successfully");
+        reset();
+        setOpen(true);
       });
-      reset();
-      setOpen(true);
+
       // console.log("Success!");
     } catch (error) {
       setError(true);
