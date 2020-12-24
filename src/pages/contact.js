@@ -91,8 +91,8 @@ export default function ContactPage({ data: { site } }) {
         <div>
           <form
             className="form-container"
-            // action="https://sendmail.w3layouts.com/SubmitContactForm"
-            onSubmit={handleSubmit(onSubmit)}
+            action="https://sendmail.w3layouts.com/SubmitContactForm"
+            // onSubmit={handleSubmit(onSubmit)}
             method="post"
           >
             <div>
@@ -103,7 +103,7 @@ export default function ContactPage({ data: { site } }) {
                 name="w3lName"
                 id="Name"
                 ref={register}
-                // required
+                required
               />
             </div>
             <div>
@@ -114,7 +114,7 @@ export default function ContactPage({ data: { site } }) {
                 name="w3lSender"
                 id="Sender"
                 ref={register}
-                // required
+                required
               />
             </div>
             <div>
@@ -135,7 +135,7 @@ export default function ContactPage({ data: { site } }) {
                 id="Message"
                 type="text"
                 ref={register}
-                // required
+                required
               ></textarea>
             </div>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
