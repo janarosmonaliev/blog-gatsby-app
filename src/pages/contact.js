@@ -42,8 +42,10 @@ export default function ContactPage({ data: { site } }) {
         method: "POST",
         mode: "cors",
         cache: "no-cache",
+        credentials: "include",
         body: JSON.stringify(data),
         headers: {
+          Accept: "application/json",
           "Content-type": "application/json; charset=UTF-8",
         },
       });
@@ -91,8 +93,8 @@ export default function ContactPage({ data: { site } }) {
         <div>
           <form
             className="form-container"
-            action="https://sendmail.w3layouts.com/SubmitContactForm"
-            // onSubmit={handleSubmit(onSubmit)}
+            // action="https://sendmail.w3layouts.com/SubmitContactForm"
+            onSubmit={handleSubmit(onSubmit)}
             method="post"
           >
             <div>
@@ -102,7 +104,7 @@ export default function ContactPage({ data: { site } }) {
                 type="text"
                 name="w3lName"
                 id="Name"
-                // ref={register}
+                ref={register}
                 required
               />
             </div>
@@ -113,7 +115,7 @@ export default function ContactPage({ data: { site } }) {
                 type="email"
                 name="w3lSender"
                 id="Sender"
-                // ref={register}
+                ref={register}
                 required
               />
             </div>
@@ -124,7 +126,7 @@ export default function ContactPage({ data: { site } }) {
                 type="text"
                 name="w3lSubject"
                 id="Subject"
-                // ref={register}
+                ref={register}
               />
             </div>
             <div>
@@ -134,7 +136,7 @@ export default function ContactPage({ data: { site } }) {
                 name="w3lMessage"
                 id="Message"
                 type="text"
-                // ref={register}
+                ref={register}
                 required
               ></textarea>
             </div>
