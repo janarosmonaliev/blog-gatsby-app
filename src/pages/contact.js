@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ContactPage({ data: { site } }) {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [isSuccess, setSuccess] = useState(false);
   const [isError, setError] = useState(false);
   const {
     register,
@@ -36,26 +36,27 @@ export default function ContactPage({ data: { site } }) {
     reset,
     formState: { isSubmitting },
   } = useForm();
-  const onSubmit = async (data) => {
-    try {
-      await fetch("https://sendmail.w3layouts.com/SubmitContactForm", {
-        method: "POST",
-        mode: "cors",
-        cache: "no-cache",
-        credentials: "include",
-        body: JSON.stringify(data),
-        redirect: "manual",
-        headers: {
-          Accept: "application/json",
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      }).then(() => {
-        console.log("Message sent successfully");
-        reset();
-        setOpen(true);
-      });
 
-      // console.log("Success!");
+  const onSubmit = async () => {
+    const payload = new FormData(document.querySelector("#contact_form"));
+
+    try {
+      await fetch("https://formcarry.com/s/URtIX5tQbi", {
+        method: "POST",
+        headers: { Accept: "application/x-www-form-urlencoded" },
+        body: payload,
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          if (res.code === 200) {
+            console.log("Message sent successfully");
+            reset();
+            setSuccess(true);
+          } else {
+            setError(true);
+          }
+        });
     } catch (error) {
       setError(true);
       console.log(error);
@@ -66,7 +67,7 @@ export default function ContactPage({ data: { site } }) {
       return;
     }
     setError(false);
-    setOpen(false);
+    setSuccess(false);
   };
 
   return (
@@ -97,16 +98,16 @@ export default function ContactPage({ data: { site } }) {
         <div>
           <form
             className="form-container"
-            // action="https://sendmail.w3layouts.com/SubmitContactForm"
+            id="contact_form"
             onSubmit={handleSubmit(onSubmit)}
             method="post"
           >
             <div>
               <label htmlFor="Name">Name</label>
               <input
-                disabled={isSubmitting}
+                // disabled={isSubmitting}
                 type="text"
-                name="w3lName"
+                name="name"
                 id="Name"
                 ref={register}
                 required
@@ -115,9 +116,9 @@ export default function ContactPage({ data: { site } }) {
             <div>
               <label htmlFor="Sender">Email</label>
               <input
-                disabled={isSubmitting}
+                // disabled={isSubmitting}
                 type="email"
-                name="w3lSender"
+                name="sender"
                 id="Sender"
                 ref={register}
                 required
@@ -126,9 +127,9 @@ export default function ContactPage({ data: { site } }) {
             <div>
               <label htmlFor="Subject">Subject</label>
               <input
-                disabled={isSubmitting}
+                // disabled={isSubmitting}
                 type="text"
-                name="w3lSubject"
+                name="subject"
                 id="Subject"
                 ref={register}
               />
@@ -136,14 +137,15 @@ export default function ContactPage({ data: { site } }) {
             <div>
               <label htmlFor="Message">Message</label>
               <textarea
-                disabled={isSubmitting}
-                name="w3lMessage"
+                // disabled={isSubmitting}
+                name="message"
                 id="Message"
                 type="text"
                 ref={register}
                 required
               ></textarea>
             </div>
+
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <button
                 disabled={isSubmitting}
@@ -156,7 +158,7 @@ export default function ContactPage({ data: { site } }) {
             </div>
           </form>
           <Snackbar
-            open={open}
+            open={isSuccess}
             autoHideDuration={5000}
             onClose={handleClose}
             anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
