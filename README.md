@@ -9,11 +9,11 @@ npm install --save gatsby
 gatsby new gatsby-starter-delog https://github.com/W3Layouts/gatsby-starter-delog
 ```
 
-However, significant amount of work was put into design and functionality. More on how it was built and which additional frameworks were used can be read on my [blog post](https://janarosmonaliev.com).
+However, significant amount of work was put into design and functionality. More on how it was built and which additional frameworks were used can be read on my [blog post](https://janarosmonaliev.com/discovering-gatsby-js).
 ![Personal Blog](https://janarosmonaliev.com/assets/blogpost-1.png)
 To make things easier, above is a structure of my blog that is portrayed in the highest level of abstraction possible, while retaining the overall logic.
 
-### [janarosmonaliev.com](https://janarosmonaliev.com/discovering-gatsby-js)
+### [janarosmonaliev.com](https://janarosmonaliev.com)
 
 ## License
 
