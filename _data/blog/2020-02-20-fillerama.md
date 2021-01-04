@@ -21,7 +21,7 @@ The initial plan was to build a typical MERN stack application. I proceeded codi
 
 Once I was familiar with Gatsby's documentation, I have started building my blog on top of an existing template that they were offering on their website. You can actually try it yourself by running these scripts below:
 
-```gitattributes
+```git
 npm install --save gatsby
 gatsby new gatsby-starter-delog https://github.com/W3Layouts/gatsby-starter-delog
 ```
