@@ -56,8 +56,8 @@ export default function ResumeMenu() {
         aria-haspopup="true"
         onClick={handleClick}
         className="nav-button"
-        color={isActive ? "primary" : "black"}
         size="large"
+        color={isActive ? "primary" : "default"}
       >
         <Box fontWeight={600} className="nav-button">
           Resume

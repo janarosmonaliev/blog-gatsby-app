@@ -74,6 +74,7 @@ export default function Template({
           <img
             src={`${frontmatter.thumbnail}`}
             className="post-thumbnail"
+            alt="Post thumbnail"
           ></img>
           <div
             className="blog-post-content"

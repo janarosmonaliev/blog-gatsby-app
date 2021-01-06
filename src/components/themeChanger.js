@@ -4,11 +4,11 @@ import { Sun, Moon } from "react-feather";
 import { IconButton, SvgIcon } from "@material-ui/core";
 
 export default () => {
-  const [isLightMode, setMode] = React.useState(true);
-  const changeTheme = (toggleTheme) => {
-    setMode(!isLightMode);
-    return "light";
-  };
+  // const [isLightMode, setMode] = React.useState(true);
+  // const changeTheme = (toggleTheme) => {
+  //   setMode(!isLightMode);
+  //   return "light";
+  // };
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (

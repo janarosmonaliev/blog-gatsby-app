@@ -30,8 +30,8 @@ export default () => {
               item
               xs={12}
               md
-              alignItems="center"
-              justify="center"
+              // alignItems="center"
+              // justify="center"
               className="avatar-wrapper"
             >
               <img

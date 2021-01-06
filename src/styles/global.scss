@@ -110,6 +110,15 @@ a {
 .gatsby-highlight {
   margin-bottom: var(--space-sm);
 }
+::selection {
+  color: white;
+  background: var(--primary-color);
+}
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: var(--primary-color);
+}
 .nav-button {
   color: var(--text-color);
   text-decoration: none;

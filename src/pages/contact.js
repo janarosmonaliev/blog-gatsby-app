@@ -9,6 +9,7 @@ import Box from "@material-ui/core/Box";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import ImgBackground from "../images/contact-img.jpg";
 
 const useStyles = makeStyles((theme) => ({
   alert: {
@@ -88,7 +89,7 @@ export default function ContactPage({ data: { site } }) {
         <div
           className="post-thumbnail-contact"
           style={{
-            backgroundImage: `url('/assets/contact-img.jpg')`,
+            backgroundImage: `url(${ImgBackground})`,
             marginBottom: 0,
           }}
         >
