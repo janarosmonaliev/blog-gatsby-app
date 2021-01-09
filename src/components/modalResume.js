@@ -73,7 +73,13 @@ export default function ModalResume() {
         <DialogContent>
           <Grid container>
             <Grid item xs={12}>
-              <img src={Resume} className={classes.resume} alt="Resume"></img>
+              <img
+                src={Resume}
+                className={classes.resume}
+                alt="Resume"
+                width="1785px"
+                height="2268px"
+              ></img>
             </Grid>
           </Grid>
         </DialogContent>

@@ -1,15 +1,16 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import Layout from "../components/layout";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
 import Slide from "@material-ui/core/Slide";
-import Box from "@material-ui/core/Box";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ImgBackground from "../images/contact-img.jpg";
+import { IconButton, SvgIcon, Box } from "@material-ui/core";
+import { ArrowLeft } from "react-feather";
 
 const useStyles = makeStyles((theme) => ({
   alert: {
@@ -24,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
     ["@media(min-width: 768px)"]: {
       marginBottom: "35px",
     },
+  },
+  buttonBack: {
+    color: "#f12b46",
   },
 }));
 
@@ -80,11 +84,21 @@ export default function ContactPage({ data: { site } }) {
           content={"Contact page of " + site.siteMetadata.description}
         />
       </Helmet>
-      {/* <IconButton aria-label="go-back" size="medium">
-        <SvgIcon>
-          <ArrowLeft />
-        </SvgIcon>
-      </IconButton> */}
+      {/* <Box className="button-back-wrapper">
+        <IconButton
+          aria-label="back"
+          size="medium"
+          // className="button-back-wrapper"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate(-1);
+          }}
+        >
+          <SvgIcon className={classes.buttonBack} fontSize="large">
+            <ArrowLeft />
+          </SvgIcon>
+        </IconButton>
+      </Box> */}
       <div className={"two-grids -contact "}>
         <div
           className="post-thumbnail-contact"

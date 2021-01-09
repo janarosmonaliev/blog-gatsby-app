@@ -2,6 +2,7 @@ import React from "react";
 import { Menu, MenuItem, Button, Box } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import ModalResume from "./modalResume";
+import ResumePDF from "../images/Osmonaliev-Zhanarbek-CV.pdf";
 
 const useStyles = makeStyles({
   link: {
@@ -37,14 +38,11 @@ const StyledMenu = withStyles({
 
 export default function ResumeMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [isActive, setButtonState] = React.useState(false);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    setButtonState(true);
   };
   const handleClose = () => {
     setAnchorEl(null);
-    setButtonState(false);
   };
 
   const classes = useStyles();
@@ -57,9 +55,8 @@ export default function ResumeMenu() {
         onClick={handleClick}
         className="nav-button"
         size="large"
-        color={isActive ? "primary" : "default"}
       >
-        <Box fontWeight={600} className="nav-button">
+        <Box fontWeight={600} className={"nav-button"}>
           Resume
         </Box>
       </Button>
@@ -70,14 +67,14 @@ export default function ResumeMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <Box className={classes.menuList}>
+        <Box className={classes.menuList + "menu-card"}>
           <ModalResume />
           <MenuItem>
             <a
               className={classes.link}
-              href={"/assets/Osmonaliev-Zhanarbek-CV.pdf"}
+              href={ResumePDF}
               target="_blank"
-              download
+              download="Zhanarbek-Osmonaliev-CV.pdf"
               rel="noopener noreferrer"
             >
               Download

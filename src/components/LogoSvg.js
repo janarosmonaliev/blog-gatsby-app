@@ -6,9 +6,9 @@ export default function LogoSvg() {
     logo = (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="193"
-        height="48"
-        viewBox="0 0 232 48"
+        width="191"
+        height="46"
+        viewBox="0 0 232 46"
         fill="none"
       >
         <path

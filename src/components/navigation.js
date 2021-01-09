@@ -11,9 +11,9 @@ export default (props) => (
     </Box>
     <Box mx={1} fontWeight={600}>
       <Button disableTouchRipple={true} size="large" className="nav-button">
-        <Link to="/contact">
-          <Box fontWeight={600}>Contact</Box>
-        </Link>
+        <Box fontWeight={600} className="nav-button">
+          <Link to="/contact">Contact</Link>
+        </Box>
       </Button>
     </Box>
     <ThemeChanger />

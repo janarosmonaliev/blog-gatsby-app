@@ -73,6 +73,7 @@ body.dark {
 body {
   font-family: $font-family;
   border-top: 10px solid var(--primary-color);
+  transition: border-top 0.3s linear;
   background-color: var(--background);
   color: var(--text-color);
 }
@@ -130,6 +131,12 @@ a {
   }
 }
 
+.button-back {
+  color: var(--primary-color);
+}
+.button-back-wrapper {
+  display: none;
+}
 .logo-text {
   fill: var(--text-color);
 }
@@ -151,11 +158,14 @@ a {
 .site-header::-webkit-scrollbar {
   display: none;
 }
-.site-title a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 900;
-  text-transform: uppercase;
+.site-title {
+  // display: block;
+  // border-radius: 6px;
+  // margin: 0px 10px 0px 10px;
+  // background-color: rgba(171, 171, 171, 0);
+  // :hover {
+  //   background-color: rgba(171, 171, 171, 0.15);
+  // }
 }
 .hero-header {
   padding-bottom: 64px;
@@ -165,6 +175,7 @@ a {
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
+
 .img-avatar {
   text-align: center;
   max-width: 150px;
@@ -279,7 +290,7 @@ a {
   overflow: hidden;
   &:before {
     content: "";
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 0;
     left: 0;
@@ -353,10 +364,12 @@ a {
   font-size: 0.8rem;
   color: var(--text-secondary-color);
   text-align: left;
+
   > span {
     color: var(--complimentary-color);
     text-transform: uppercase;
     font-weight: 600;
+    transition: color 0.3s linear;
   }
 }
 .site-footer {
@@ -456,6 +469,11 @@ a {
       }
     }
   }
+  .button-back-wrapper {
+    display: inline;
+    position: absolute;
+    margin-left: -130px;
+  }
 }
 
 // theme-changer
@@ -484,4 +502,3 @@ body.light {
 .gg-sun {
   color: yellow;
 }
-// CSS.gg icons for sun and moon
