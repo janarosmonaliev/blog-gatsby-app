@@ -2,7 +2,8 @@ import React from "react";
 
 export default function LogoSvg() {
   let logo;
-  if (window.innerWidth >= 768) {
+  const isWindow = typeof window !== "undefined";
+  if (isWindow && window.innerWidth >= 768) {
     logo = (
       <svg
         xmlns="http://www.w3.org/2000/svg"
