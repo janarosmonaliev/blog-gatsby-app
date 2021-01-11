@@ -45,7 +45,7 @@ const IndexPage = ({
           <meta name="description" content={site.siteMetadata.description} />
           <meta
             name="keywords"
-            content="blog, university, computer science, ideas, korea, student, developer, design"
+            content="blog, university, computer science, ideas, korea, student, developer, design, stony brook, suny korea"
           ></meta>
           <meta
             content="width=device-width, initial-scale=1"

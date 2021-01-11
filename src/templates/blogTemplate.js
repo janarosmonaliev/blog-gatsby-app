@@ -77,6 +77,17 @@ export default function Template({
             {frontmatter.title} | {siteMetadata.title}
           </title>
           <meta name="description" content={frontmatter.metaDescription} />
+          <meta name="og:title" content={frontmatter.title}></meta>
+          <meta name="image" content={frontmatter.thumbnail}></meta>
+          <meta name="og:image" content={frontmatter.thumbnail}></meta>
+          <meta
+            name="keywords"
+            content={frontmatter.flair + " blogpost, story"}
+          ></meta>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+          ></meta>
         </Helmet>
         <div className="blog-post-container">
           <article className="post">

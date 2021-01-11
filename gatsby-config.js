@@ -46,13 +46,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Janar's Blog`,
-        short_name: `Blog`,
+        name: `Zhanarbek Osmonaliev | Personal Blog`,
+        short_name: `Perosonal Blog`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#381696`,
         display: `standalone`,
-        icon: "src/images/icon.png",
+        icon: "src/images/icon-lg.png",
       },
     },
     `gatsby-plugin-sass`,
