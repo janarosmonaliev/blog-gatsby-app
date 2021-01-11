@@ -23,7 +23,7 @@ I discovered French Kiwi Juice (FKJ), a singer and multi-instrumentalist produce
 
 The music video I talked about above. It is a must-watch. Period.
 
-<iframe width="768" height="432" src="https://www.youtube.com/embed/EfgAd6iHApE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube-wrapper"><iframe width="768" height="432" src="https://www.youtube.com/embed/EfgAd6iHApE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## Blonde - Frank Ocean
 
@@ -35,7 +35,7 @@ This album is a masterpiece created by Frank Ocean, an American singer and visua
 
 "*Get lost in the sprawling colorful landscapes of Hayao Miyazaki and through the dark and twisted streets of Katsuhiro Otomo's Neo Tokyo. These worlds breathe life into Frank Ocean's symphonic soundscapes.*" - Justin West and Alex Rivera. May this beautiful mashup video act as a pathway into Frank Ocean's art.
 
-<iframe width="768" height="432" src="https://www.youtube.com/embed/F5WWyyYG018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube-wrapper"><iframe width="768" height="432" src="https://www.youtube.com/embed/F5WWyyYG018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## After Hours - 53 Thieves
 
@@ -47,7 +47,7 @@ This album is a masterpiece created by Frank Ocean, an American singer and visua
 
 Each song tells a different story, however, as a whole, they form a harmonious narrative that can be listened in one sitting. I would highly suggest listening to the entire album, but if you are in a hurry, try listening to "three a.m.", you might as well find more spare time for the rest of the album.
 
-<iframe width="768" height="432" src="https://www.youtube.com/embed/uKSAqOZpaQs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube-wrapper"><iframe width="768" height="432" src="https://www.youtube.com/embed/uKSAqOZpaQs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## Renaissance Boy - Galimatias
 
@@ -59,4 +59,4 @@ In "Renaissance Boy", as the name suggests, Galimatias rediscovers himself as an
 
 Again, I would suggest listening to the entire album, you cannot miss this gem. Speaking of my personal favorites, I enjoyed Redeye, Let Go and interlude Everywhere.
 
-<iframe width="768" height="432" src="https://www.youtube.com/embed/H-PG3ZqO-gA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="youtube-wrapper"><iframe width="768" height="432" src="https://www.youtube.com/embed/H-PG3ZqO-gA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
