@@ -51,6 +51,10 @@ const IndexPage = ({
             content="width=device-width, initial-scale=1"
             name="viewport"
           ></meta>
+          <meta
+            name="image"
+            content="https://janarosmonaliev.com/assets/placeholder.png"
+          ></meta>
           <html lang="en" />
         </Helmet>
         <HeroHeader />
