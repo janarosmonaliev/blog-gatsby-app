@@ -240,6 +240,11 @@ a {
       font-size: 23px;
       font-weight: 500;
     }
+    > h3 {
+      margin-top: var(--space-md);
+      margin-bottom: var(--space-sm);
+      // font-weight: 500;
+    }
     > p {
       margin-bottom: var(--space-sm);
     }
@@ -460,14 +465,6 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 64px;
-  }
-  .post {
-    > .blog-post-content {
-      img {
-        margin-left: -116px;
-        max-width: 1000px;
-      }
-    }
   }
   .button-back-wrapper {
     display: inline;
