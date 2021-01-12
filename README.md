@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8ec719ad-c2f8-4529-b97d-e7561a9eaf33/deploy-status)](https://app.netlify.com/sites/janarosmonaliev/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a0747a9a-07ba-4d14-9d74-f944d35226c2/deploy-status)](https://app.netlify.com/sites/janarosmonaliev/deploys)
 
 # Personal blog built using Gatsby.js
 
