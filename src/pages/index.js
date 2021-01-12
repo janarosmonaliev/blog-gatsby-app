@@ -45,16 +45,11 @@ const IndexPage = ({
           <meta name="description" content={site.siteMetadata.description} />
           <meta
             name="keywords"
-            content="blog, university, computer science, ideas, korea, student, developer, design, stony brook, suny korea"
+            content="blog, university, computer science, ideas, korea, student, developer, design, stony brook, suny korea, janar, osmonaliev"
           ></meta>
-          <meta
-            content="width=device-width, initial-scale=1"
-            name="viewport"
-          ></meta>
-          <meta
-            name="image"
-            content="https://janarosmonaliev.com/assets/placeholder.png"
-          ></meta>
+          <meta content={site.siteMetadata.viewport} name="viewport"></meta>
+          <meta name="image" content={site.siteMetadata.image}></meta>
+
           <html lang="en" />
         </Helmet>
         <HeroHeader />
@@ -72,6 +67,8 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        viewport
+        image
       }
     }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
