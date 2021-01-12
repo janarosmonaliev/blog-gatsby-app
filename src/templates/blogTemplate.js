@@ -91,7 +91,10 @@ export default function Template({
           <html lang="en" />
           {/* Open Graph / Facebook */}
           <meta property="og:type" content="website"></meta>
-          <meta property="og:url" content={siteMetadata.siteUrl}></meta>
+          <meta
+            property="og:url"
+            content={siteMetadata.siteUrl + frontmatter.path}
+          ></meta>
           <meta name="og:title" content={frontmatter.title}></meta>
           <meta name="og:description" content={frontmatter.metaDescription} />
           <meta
@@ -104,7 +107,10 @@ export default function Template({
             property="twitter:card"
             content={"https://janarosmonaliev.com" + frontmatter.thumbnail}
           ></meta>
-          <meta property="twitter:url" content={siteMetadata.siteUrl}></meta>
+          <meta
+            property="twitter:url"
+            content={siteMetadata.siteUrl + frontmatter.path}
+          ></meta>
           <meta property="twitter:title" content={frontmatter.title}></meta>
           <meta
             property="twitter:description"
