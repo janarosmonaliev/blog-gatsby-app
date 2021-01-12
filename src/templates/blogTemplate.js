@@ -74,15 +74,10 @@ export default function Template({
       <Layout>
         <Helmet>
           <title>{frontmatter.title} | Zhanarbek Osmonaliev</title>
-          <meta name="og:title" content={frontmatter.title}></meta>
+          <meta name="title" content={frontmatter.title}></meta>
           <meta name="description" content={frontmatter.metaDescription} />
-          <meta name="og:description" content={frontmatter.metaDescription} />
           <meta
             name="image"
-            content={"https://janarosmonaliev.com" + frontmatter.thumbnail}
-          ></meta>
-          <meta
-            name="og:image"
             content={"https://janarosmonaliev.com" + frontmatter.thumbnail}
           ></meta>
           <meta
@@ -92,6 +87,32 @@ export default function Template({
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          ></meta>
+          <html lang="en" />
+          {/* Open Graph / Facebook */}
+          <meta property="og:type" content="website"></meta>
+          <meta property="og:url" content={siteMetadata.siteUrl}></meta>
+          <meta name="og:title" content={frontmatter.title}></meta>
+          <meta name="og:description" content={frontmatter.metaDescription} />
+          <meta
+            name="og:image"
+            content={"https://janarosmonaliev.com" + frontmatter.thumbnail}
+          ></meta>
+
+          {/* Twitter */}
+          <meta
+            property="twitter:card"
+            content={"https://janarosmonaliev.com" + frontmatter.thumbnail}
+          ></meta>
+          <meta property="twitter:url" content={siteMetadata.siteUrl}></meta>
+          <meta property="twitter:title" content={frontmatter.title}></meta>
+          <meta
+            property="twitter:description"
+            content={frontmatter.metaDescription}
+          ></meta>
+          <meta
+            property="twitter:image"
+            content={"https://janarosmonaliev.com" + frontmatter.thumbnail}
           ></meta>
         </Helmet>
         <div className="blog-post-container">
@@ -149,6 +170,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
