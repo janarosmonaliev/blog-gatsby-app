@@ -30,11 +30,11 @@ Displaying population movement interactively was an issue in terms implementatio
 
 ![Graph of the city](/assets/city-graph.png "Blobs' movement graph path")
 
-Blobs' movement is animated by taking their movement path, which is essentially a list of vectors, and calculating the location of a point at`t`th percentage relative to the length of the vector path. So, on each frame, it increments that`t`by a small fraction and updates the location for each blob.
+Blobs' movement is animated by taking their movement path, which is essentially a list of vectors, and calculating the location of a point at **n**th percentage relative to the length of the vector path. So, on each frame, it increments that **n** by a small fraction and updates the location for each blob.
 
 ## Spread algorithm
 
-One day is counted in terms of blobs' two way travel from home to work. So, on each day, each infected blob transmits the disease with an `$infectionChance `to random `$contactedWithBlobs `number of blobs, whether they are already infected or not. I thought that would resemble the real-life conditions of the disease spread.
+One day is counted in terms of blobs' two way travel from home to work. So, on each day, each infected blob transmits the disease with an `infectionChance` to random `contactedWithBlobs` number of blobs, whether they are already infected or not. I thought that would resemble the real-life conditions of the disease spread.
 
 ## Adding 3D models
 
