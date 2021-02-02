@@ -72,7 +72,7 @@ body.dark {
 /* System Fonts as used by Medium and WordPress */
 body {
   font-family: $font-family;
-  border-top: 10px solid var(--primary-color);
+  border-top: 5px solid var(--primary-color);
   transition: border-top 0.3s linear;
   background-color: var(--background);
   color: var(--text-color);
@@ -121,10 +121,9 @@ a {
   background: var(--primary-color);
 }
 .nav-button {
-  color: var(--text-color);
-  text-decoration: none;
+  color: var(--text-color) !important;
   &:hover {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
   }
   &:focus {
     color: var(--primary-color);
@@ -137,11 +136,26 @@ a {
 .button-back-wrapper {
   display: none;
 }
-.logo-text {
-  fill: var(--text-color);
+.logo-wrapper {
+  display: block;
+  border-radius: 4px;
+  // overflow:
+  perspective: 1px;
+  height: 41px;
+  :hover {
+    background-color: rgba(171, 171, 171, 0.1);
+  }
 }
-.logo-rect {
-  fill: var(--primary-color);
+
+.logo-svg {
+  padding: 5px;
+  border-radius: 4px;
+  > path {
+    fill: var(--text-color);
+  }
+  > rect {
+    fill: var(--primary-color);
+  }
 }
 .site-header {
   display: flex;
@@ -157,15 +171,6 @@ a {
 }
 .site-header::-webkit-scrollbar {
   display: none;
-}
-.site-title {
-  // display: block;
-  // border-radius: 6px;
-  // margin: 0px 10px 0px 10px;
-  // background-color: rgba(171, 171, 171, 0);
-  // :hover {
-  //   background-color: rgba(171, 171, 171, 0.15);
-  // }
 }
 .hero-header {
   padding-bottom: 64px;
@@ -430,7 +435,7 @@ a {
     padding: 20px 0;
   }
   .site-wrapper {
-    padding-top: 32px;
+    padding-top: 8px;
     padding-bottom: 32px;
   }
   .grids {

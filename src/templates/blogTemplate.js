@@ -15,7 +15,7 @@ const theme = createMuiTheme({
     MuiButton: {
       root: {
         "&:hover": {
-          backgroundColor: "rgba(171, 171, 171, 0.15)",
+          backgroundColor: "rgba(171, 171, 171, 0.1)",
           // backgroundColor: "#f2f2f3",
         },
       },
@@ -23,7 +23,7 @@ const theme = createMuiTheme({
     MuiIconButton: {
       root: {
         "&:hover": {
-          backgroundColor: "rgba(171, 171, 171, 0.15)",
+          backgroundColor: "rgba(171, 171, 171, 0.1)",
           // backgroundColor: "#f2f2f3",
         },
       },

@@ -48,18 +48,18 @@ export default function ResumeMenu() {
   const classes = useStyles();
   return (
     <div>
-      <Button
-        disableTouchRipple={true}
-        aria-controls="resume-menu"
-        aria-haspopup="true"
-        onClick={handleClick}
-        className="nav-button"
-        size="large"
-      >
-        <Box fontWeight={600} className={"nav-button"}>
+      <Box mx={1}>
+        <Button
+          disableTouchRipple={true}
+          aria-controls="resume-menu"
+          aria-haspopup="true"
+          onClick={handleClick}
+          className="nav-button"
+          // size="large"
+        >
           Resume
-        </Box>
-      </Button>
+        </Button>
+      </Box>
       <StyledMenu
         id="resume-menu"
         anchorEl={anchorEl}

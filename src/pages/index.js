@@ -4,28 +4,6 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import PostLink from "../components/post-link";
 import HeroHeader from "../components/heroHeader";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-
-const theme = createMuiTheme({
-  overrides: {
-    MuiButton: {
-      root: {
-        "&:hover": {
-          backgroundColor: "rgba(171, 171, 171, 0.15)",
-          // backgroundColor: "#f2f2f3",
-        },
-      },
-    },
-    MuiIconButton: {
-      root: {
-        "&:hover": {
-          backgroundColor: "rgba(171, 171, 171, 0.15)",
-          // backgroundColor: "#f2f2f3",
-        },
-      },
-    },
-  },
-});
 
 const IndexPage = ({
   data: {
@@ -38,57 +16,43 @@ const IndexPage = ({
     .map((edge) => <PostLink key={edge.node.id} post={edge.node} />);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <Helmet>
-          <title>{site.siteMetadata.title}</title>
-          <meta name="title" content={site.siteMetadata.title}></meta>
-          <meta name="description" content={site.siteMetadata.description} />
-          <meta
-            name="keywords"
-            content="blog, university, computer science, ideas, korea, student, developer, design, stony brook, suny korea, janar, osmonaliev"
-          ></meta>
-          <meta name="viewport" content={site.siteMetadata.viewport}></meta>
-          <meta name="image" content={site.siteMetadata.image}></meta>
+    <Layout>
+      <Helmet>
+        <title>{site.siteMetadata.title}</title>
+        <meta name="title" content={site.siteMetadata.title}></meta>
+        <meta name="description" content={site.siteMetadata.description} />
+        <meta
+          name="keywords"
+          content="blog, university, computer science, ideas, korea, student, developer, design, stony brook, suny korea, janar, osmonaliev"
+        ></meta>
+        <meta name="viewport" content={site.siteMetadata.viewport}></meta>
+        <meta name="image" content={site.siteMetadata.image}></meta>
 
-          {/* Open Graph / Facebook */}
-          <meta property="og:type" content="website"></meta>
-          <meta property="og:url" content={site.siteMetadata.siteUrl}></meta>
-          <meta property="og:title" content={site.siteMetadata.title}></meta>
-          <meta
-            property="og:description"
-            content={site.siteMetadata.description}
-          ></meta>
-          <meta property="og:image" content={site.siteMetadata.image}></meta>
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website"></meta>
+        <meta property="og:url" content={site.siteMetadata.siteUrl}></meta>
+        <meta property="og:title" content={site.siteMetadata.title}></meta>
+        <meta
+          property="og:description"
+          content={site.siteMetadata.description}
+        ></meta>
+        <meta property="og:image" content={site.siteMetadata.image}></meta>
 
-          {/* Twitter */}
-          <meta
-            property="twitter:card"
-            content={site.siteMetadata.image}
-          ></meta>
-          <meta
-            property="twitter:url"
-            content={site.siteMetadata.siteUrl}
-          ></meta>
-          <meta
-            property="twitter:title"
-            content={site.siteMetadata.title}
-          ></meta>
-          <meta
-            property="twitter:description"
-            content={site.siteMetadata.description}
-          ></meta>
-          <meta
-            property="twitter:image"
-            content={site.siteMetadata.image}
-          ></meta>
-          <html lang="en" />
-        </Helmet>
-        <HeroHeader />
-        <h2>Blog Posts &darr;</h2>
-        <div className="grids">{Posts}</div>
-      </Layout>
-    </ThemeProvider>
+        {/* Twitter */}
+        <meta property="twitter:card" content={site.siteMetadata.image}></meta>
+        <meta property="twitter:url" content={site.siteMetadata.siteUrl}></meta>
+        <meta property="twitter:title" content={site.siteMetadata.title}></meta>
+        <meta
+          property="twitter:description"
+          content={site.siteMetadata.description}
+        ></meta>
+        <meta property="twitter:image" content={site.siteMetadata.image}></meta>
+        <html lang="en" />
+      </Helmet>
+      <HeroHeader />
+      <h2>Blog Posts &darr;</h2>
+      <div className="grids">{Posts}</div>
+    </Layout>
   );
 };
 
