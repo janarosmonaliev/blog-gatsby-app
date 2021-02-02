@@ -11,16 +11,24 @@ export default function Navigation(props) {
       <Box mx={1}>
         <Button
           disableTouchRipple={true}
-          // size="large"
+          href="https://github.com/janarosmonaliev"
+          className="nav-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github
+        </Button>
+      </Box>
+      <Box mx={1}>
+        <Button
+          disableTouchRipple={true}
           className="nav-button"
           href="/contact"
         >
-          {/* <Box fontWeight={600} className="nav-button"> */}
           Contact
-          {/* <Link to="/contact">Contact</Link> */}
-          {/* </Box> */}
         </Button>
       </Box>
+
       <ThemeChanger />
     </nav>
   );

@@ -139,7 +139,6 @@ a {
 .logo-wrapper {
   display: block;
   border-radius: 4px;
-  // overflow:
   perspective: 1px;
   height: 41px;
   :hover {
@@ -148,8 +147,10 @@ a {
 }
 
 .logo-svg {
-  padding: 5px;
+  padding: 7px;
   border-radius: 4px;
+  width: 160px;
+  height: auto;
   > path {
     fill: var(--text-color);
   }
@@ -159,7 +160,7 @@ a {
 }
 .site-header {
   display: flex;
-  padding: 15px 0px 15px 0px;
+  padding: 5px 0px 15px 0px;
   white-space: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -173,6 +174,7 @@ a {
   display: none;
 }
 .hero-header {
+  padding-top: 0px;
   padding-bottom: 64px;
 }
 .headline {
@@ -431,11 +433,14 @@ a {
 }
 /* Portrait and Landscape */
 @media only screen and (min-width: 768px) {
+  .hero-header {
+    padding-top: 25px;
+  }
   .site-header {
-    padding: 20px 0;
+    padding: 15px 0 20px 0;
   }
   .site-wrapper {
-    padding-top: 8px;
+    padding-top: 0px;
     padding-bottom: 32px;
   }
   .grids {
