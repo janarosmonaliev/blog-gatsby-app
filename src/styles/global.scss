@@ -120,6 +120,11 @@ a {
   color: white;
   background: var(--primary-color);
 }
+
+#three-canvas {
+  width: 100%;
+  height: 500px;
+}
 .nav-button {
   color: var(--text-color) !important;
   &:hover {

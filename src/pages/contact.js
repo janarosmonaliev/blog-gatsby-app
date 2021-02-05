@@ -84,21 +84,6 @@ export default function ContactPage({ data: { site } }) {
           content={"Contact page of " + site.siteMetadata.description}
         />
       </Helmet>
-      {/* <Box className="button-back-wrapper">
-        <IconButton
-          aria-label="back"
-          size="medium"
-          // className="button-back-wrapper"
-          onClick={(e) => {
-            e.preventDefault();
-            navigate(-1);
-          }}
-        >
-          <SvgIcon className={classes.buttonBack} fontSize="large">
-            <ArrowLeft />
-          </SvgIcon>
-        </IconButton>
-      </Box> */}
       <div className={"two-grids -contact "}>
         <div
           className="post-thumbnail-contact"

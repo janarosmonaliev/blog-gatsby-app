@@ -1,0 +1,79 @@
+{
+  "glyphs": {
+    "A": {
+      "ha": 1092,
+      "x_min": -19,
+      "x_max": 1111,
+      "o": "m 749 189 l 338 189 l 261 0 l -19 0 l 410 972 l 681 972 l 1111 0 l 825 0 l 749 189 m 668 392 l 543 703 l 418 392 l 668 392 z "
+    },
+    "J": {
+      "ha": 774,
+      "x_min": -28,
+      "x_max": 685,
+      "o": "m 310 -19 q 115 17 203 -19 q -28 124 28 54 l 122 301 q 290 200 200 200 q 381 236 350 200 q 413 342 413 272 l 413 760 l 76 760 l 76 972 l 685 972 l 685 358 q 590 75 685 169 q 310 -19 494 -19 z "
+    },
+    "N": {
+      "ha": 1119,
+      "x_min": 97,
+      "x_max": 1022,
+      "o": "m 1022 972 l 1022 0 l 796 0 l 367 518 l 367 0 l 97 0 l 97 972 l 324 972 l 753 454 l 753 972 l 1022 972 z "
+    },
+    "R": {
+      "ha": 1028,
+      "x_min": 97,
+      "x_max": 993,
+      "o": "m 522 258 l 372 258 l 372 0 l 97 0 l 97 972 l 542 972 q 771 928 674 972 q 921 803 868 885 q 974 613 974 722 q 924 428 974 507 q 783 306 875 350 l 993 0 l 699 0 l 522 258 m 696 613 q 653 718 696 681 q 525 756 610 756 l 372 756 l 372 471 l 525 471 q 653 508 610 471 q 696 613 696 544 z "
+    },
+    "/": {
+      "ha": 576,
+      "x_min": -51,
+      "x_max": 642,
+      "o": "m 407 1169 l 642 1169 l 183 -139 l -51 -139 l 407 1169 z "
+    },
+    "$": {
+      "ha": 899,
+      "x_min": 29,
+      "x_max": 869,
+      "o": "m 869 294 q 787 95 869 179 q 547 -12 704 11 l 547 -167 l 381 -167 l 381 -18 q 183 17 276 -11 q 29 88 90 46 l 119 290 q 271 221 185 247 q 440 194 357 194 q 599 274 599 194 q 553 335 599 315 q 408 378 508 356 q 225 428 299 401 q 99 515 151 456 q 46 676 46 575 q 132 881 46 796 q 381 986 218 967 l 381 1139 l 547 1139 l 547 989 q 699 961 626 982 q 829 907 772 940 l 744 703 q 475 778 606 778 q 356 753 393 778 q 318 690 318 729 q 363 632 318 651 q 506 592 407 613 q 690 541 617 568 q 816 455 763 514 q 869 294 869 396 z "
+    },
+    ">": {
+      "ha": 846,
+      "x_min": 81,
+      "x_max": 765,
+      "o": "m 765 593 l 765 379 l 81 126 l 81 329 l 524 486 l 81 643 l 81 846 l 765 593 z "
+    },
+    "<": {
+      "ha": 846,
+      "x_min": 81,
+      "x_max": 765,
+      "o": "m 765 643 l 322 486 l 765 329 l 765 126 l 81 379 l 81 593 l 765 846 l 765 643 z "
+    }
+  },
+  "familyName": "Montserrat ExtraBold",
+  "ascender": 1344,
+  "descender": -349,
+  "underlinePosition": -104,
+  "underlineThickness": 69,
+  "boundingBox": { "yMin": -372, "xMin": -1258, "yMax": 1511, "xMax": 2382 },
+  "resolution": 1000,
+  "original_font_information": {
+    "format": 0,
+    "copyright": "Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)",
+    "fontFamily": "Montserrat ExtraBold",
+    "fontSubfamily": "Regular",
+    "uniqueID": "7.200;ULA ;Montserrat-ExtraBold",
+    "fullName": "Montserrat ExtraBold",
+    "version": "Version 7.200",
+    "postScriptName": "Montserrat-ExtraBold",
+    "manufacturer": "Julieta Ulanovsky",
+    "designer": "Julieta Ulanovsky",
+    "manufacturerURL": "http://www.zkysky.com.ar/",
+    "designerURL": "http://www.zkysky.com.ar/",
+    "licence": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+    "licenceURL": "http://scripts.sil.org/OFL",
+    "preferredFamily": "Montserrat",
+    "preferredSubfamily": "ExtraBold"
+  },
+  "cssFontWeight": "normal",
+  "cssFontStyle": "normal"
+}
