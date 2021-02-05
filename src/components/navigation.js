@@ -7,6 +7,11 @@ import { Button, Box } from "@material-ui/core";
 export default function Navigation(props) {
   return (
     <nav className="navigation">
+      <Box mx={1}>
+        <Button disableTouchRipple={true} className="nav-button" href="/blog">
+          Blog
+        </Button>
+      </Box>
       <ResumeMenu />
       <Box mx={1}>
         <Button
