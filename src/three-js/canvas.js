@@ -25,7 +25,7 @@ const useStore = create((set) => {
             r: 0,
             geometry: new THREE.TextGeometry("</>", {
               font,
-              size: 5,
+              size: 4,
               height: 1,
               curveSegments: 4,
               evelEnabled: false,
@@ -123,7 +123,7 @@ function Geometry({ r, position, ...props }) {
         <meshPhongMaterial
           transparent={true}
           shininess={100}
-          wireframeLinewidth={5}
+          // wireframeLinewidth={5}
           // wireframe={hovered ? true : false}
           color={hovered ? "#ff642e" : "white"}
         />
@@ -158,7 +158,7 @@ function Rig() {
   const vec = new THREE.Vector3();
   return useFrame(() =>
     camera.position.lerp(
-      vec.set(mouse.x * 3, mouse.y * 2, camera.position.z),
+      vec.set(mouse.x * 3, mouse.y * 1, camera.position.z),
       0.1
     )
   );
@@ -167,14 +167,12 @@ function Rig() {
 export default function() {
   const [hovered, setHover] = useState(false);
   const { color } = useSpring({
-    color: 0,
-    from: { color: 1 },
-    config: { friction: 400 },
-    loop: true,
+    color: 1,
+    from: { color: 0 },
+    config: { friction: 30 },
   });
-
   return (
-    <div id="three-canvas">
+    <div id="canvas-wrapper">
       <Canvas
         concurrent
         gl={{
@@ -182,18 +180,31 @@ export default function() {
           antialias: false,
           stencil: false,
           depth: false,
-          alpha: false,
+          alpha: true,
         }}
         pixelRatio={1}
         camera={{ position: [0, 0, 30], near: 1, far: 70, fov: 50 }}
         shadowMap={true}
+        id="canvas"
+        onPointerOver={(event) => {
+          setHover(true);
+          // color.reverse();
+          color.reset();
+        }}
+        onPointerOut={(event) => {
+          setHover(false);
+          color.reset();
+        }}
       >
         <color attach="background" args={["white"]} />
         <a.fog
           attach="fog"
           args={["#f6f8fc", 10, 45]}
-          color={color.to([0, 0.5, 1], ["#f6f8fc", "#9776f9", "#f6f8fc"])}
-          // color="#f6f8fc"
+          color={
+            !hovered
+              ? color.to([0, 1], ["#f6f8fc", "#9776f9"])
+              : color.to([1, 0], ["#f6f8fc", "#9776f9"])
+          }
         />
 
         <ambientLight intensity={0.1} />

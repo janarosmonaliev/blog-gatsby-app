@@ -38,6 +38,7 @@
     "react-hook-form": "^6.13.1",
     "react-postprocessing": "^1.4.0",
     "react-scramble": "^0.4.2",
+    "react-spring": "^8.0.27",
     "react-three-fiber": "^5.3.18",
     "three": "^0.125.2",
     "zustand": "^3.3.1"

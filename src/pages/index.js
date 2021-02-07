@@ -1,12 +1,13 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Canvas from "../three-js/canvas";
 import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "../components/appBar";
-import Scramble from "react-scramble";
-
+// import Scramble from "react-scramble"; TODO Decide on using it
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 const useStyles = makeStyles({
   text: {
     fontSize: "44px",
@@ -17,7 +18,7 @@ const useStyles = makeStyles({
     ["@media(min-width: 768px)"]: {
       fontSize: "56px",
       top: "30%",
-      left: "15%",
+      left: "30%",
     },
   },
 });
@@ -60,49 +61,54 @@ function HelmetMeta({ website, ...props }) {
   );
 }
 
-const IndexPage = ({ data: { site } }) => {
+function About(props) {
+  let parallax = null;
   const classes = useStyles();
   return (
-    <>
+    <div>
+      <Parallax
+        ref={(ref) => (parallax = ref)}
+        vertical
+        scrolling={true}
+        pages={3}
+        className="parallax-wrapper"
+      >
+        <ParallaxLayer
+          offset={0}
+          speed={1.0}
+          onClick={() => parallax.scrollTo(1)}
+        >
+          <span className={classes.text}>
+            Hi there! <br /> I am Zhanar, <br /> a web developer.
+          </span>
+        </ParallaxLayer>
+        <ParallaxLayer offset={1} speed={0.5}>
+          <span className={classes.text}>
+            Currently pursuing my degree in Computer Science with HCI
+            specialization from Stony Brook University
+          </span>
+        </ParallaxLayer>
+        <ParallaxLayer offset={2} speed={1.0}>
+          <span className={classes.text}>iweubfiwefbwefs</span>
+        </ParallaxLayer>
+      </Parallax>
+      {/* <h1>
+        Hi there! <br /> I am Zhanar, <br /> a web developer.
+      </h1> */}
+    </div>
+  );
+}
+
+const IndexPage = ({ data: { site } }) => {
+  return (
+    <div>
       <div className="site-wrapper">
         <Navbar></Navbar>
       </div>
       <HelmetMeta website={site} />
       <Canvas></Canvas>
-      <h1 className={classes.text}>
-        <Scramble
-          // autoStart
-          mouseEnterTrigger="start"
-          // mouseLeaveTrigger="pause"
-          preScramble
-          speed={"slow"}
-          text="Hi there!"
-          steps={[
-            {
-              roll: 15,
-              action: "-",
-              type: "forward",
-            },
-          ]}
-        />
-        <br></br>
-        <Scramble
-          // autoStart
-          mouseEnterTrigger="start"
-          // mouseLeaveTrigger="pause"
-          preScramble
-          speed={"slow"}
-          text="I am Janar"
-          steps={[
-            {
-              roll: 15,
-              action: "-",
-              type: "forward",
-            },
-          ]}
-        />
-      </h1>
-    </>
+      <About></About>
+    </div>
   );
 };
 
