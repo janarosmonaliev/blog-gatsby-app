@@ -12,11 +12,12 @@ const useStyles = makeStyles({
   text: {
     fontSize: "44px",
     position: "fixed",
+    fontWeight: "500",
     top: "40%",
     left: "10%",
     right: "10%",
     ["@media(min-width: 768px)"]: {
-      fontSize: "56px",
+      fontSize: "48px",
       top: "30%",
       left: "30%",
     },
@@ -69,7 +70,7 @@ function About(props) {
       <Parallax
         ref={(ref) => (parallax = ref)}
         vertical
-        scrolling={true}
+        scrolling={false}
         pages={3}
         className="parallax-wrapper"
       >
@@ -82,19 +83,24 @@ function About(props) {
             Hi there! <br /> I am Zhanar, <br /> a web developer.
           </span>
         </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={0.5}>
+        <ParallaxLayer
+          offset={1}
+          speed={1}
+          onClick={() => parallax.scrollTo(2)}
+        >
           <span className={classes.text}>
             Currently pursuing my degree in Computer Science with HCI
             specialization from Stony Brook University
           </span>
         </ParallaxLayer>
-        <ParallaxLayer offset={2} speed={1.0}>
+        <ParallaxLayer
+          offset={2}
+          speed={1.0}
+          onClick={() => parallax.scrollTo(0)}
+        >
           <span className={classes.text}>iweubfiwefbwefs</span>
         </ParallaxLayer>
       </Parallax>
-      {/* <h1>
-        Hi there! <br /> I am Zhanar, <br /> a web developer.
-      </h1> */}
     </div>
   );
 }

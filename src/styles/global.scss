@@ -71,6 +71,9 @@ body.dark {
 }
 /* System Fonts as used by Medium and WordPress */
 body {
+  // box-sizing: border-box;
+  // -moz-box-sizing: border-box;
+  // -webkit-box-sizing: border-box;
   font-family: $font-family;
   border-top: 5px solid var(--primary-color);
   // transition: border-top 0.3s linear;
@@ -135,6 +138,7 @@ a {
   width: 100%;
   height: 100%;
 }
+
 .parallax-wrapper::-webkit-scrollbar {
   display: none;
 }
