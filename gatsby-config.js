@@ -6,6 +6,7 @@
 
 module.exports = {
   /* Your site config here */
+  pathPrefix: "/blog-gatsby-app",
   siteMetadata: require("./site-meta-data.json"),
   plugins: [
     {

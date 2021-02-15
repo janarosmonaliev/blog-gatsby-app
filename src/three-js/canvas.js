@@ -183,7 +183,7 @@ export default function() {
           alpha: true,
         }}
         pixelRatio={1}
-        camera={{ position: [0, 0, 30], near: 1, far: 70, fov: 50 }}
+        camera={{ position: [0, 0, 35], near: 1, far: 70, fov: 50 }}
         shadowMap={true}
         id="canvas"
         onPointerOver={(event) => {
@@ -199,7 +199,7 @@ export default function() {
         <color attach="background" args={["white"]} />
         <a.fog
           attach="fog"
-          args={["#f6f8fc", 10, 45]}
+          args={["#f6f8fc", 10, 50]}
           color={
             !hovered
               ? color.to([0, 1], ["#f6f8fc", "#9776f9"])
@@ -217,7 +217,7 @@ export default function() {
             //
             rotation={[Math.PI / 2, 0, 0]}
             position={[0, -8, 0]}
-            opacity={0.75}
+            opacity={0.3}
             width={30}
             height={50}
             blur={1}
