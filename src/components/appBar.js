@@ -29,14 +29,14 @@ const theme = createMuiTheme({
   },
 });
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <ThemeProvider theme={theme}>
       <header className="site-header">
         <a className="logo-wrapper" href="/">
           <LogoSVG></LogoSVG>
         </a>
-        <Navigation />
+        <Navigation callback={(e) => props.toggleTheme(e)} />
       </header>
     </ThemeProvider>
   );

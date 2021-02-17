@@ -54,6 +54,7 @@ body.light {
   --input-bg: var(--background);
   --flair-color: #758695;
   --complimentary-color: #ff642e;
+  --danger: #ff1f57;
 }
 body.dark {
   --primary-color: #8862f8;
@@ -78,16 +79,11 @@ body.dark {
   --input-bg: var(--card-bg);
   --flair-color: #c4cdd5;
   --complimentary-color: #f2994a;
-  // --complimentary-color: #ffb85c;
+  --danger: #ff3366;
 }
 /* System Fonts as used by Medium and WordPress */
 body {
-  // box-sizing: border-box;
-  // -moz-box-sizing: border-box;
-  // -webkit-box-sizing: border-box;
   font-family: $font-family;
-  // border-top: 5px solid var(--primary-color);
-  // transition: border-top 0.3s linear;
   background-color: var(--background);
   color: var(--text-color);
 }
@@ -134,6 +130,11 @@ a {
   width: 100%;
   height: 100%;
   z-index: 1;
+  > #canvas {
+    -moz-box-shadow: inset 0 0 50px 100px var(--background);
+    -webkit-box-shadow: inset 0 0 50px 100px var(--background);
+    box-shadow: inset 0 0 50px 100px var(--background);
+  }
 }
 #parallax-wrapper {
   margin: 0;
@@ -176,7 +177,19 @@ a {
     &:hover {
       animation: none;
       cursor: pointer;
-      background-color: var(--primary-color);
+      transform: scale(1.3);
+    }
+  }
+  &.passive-cancel {
+    background-color: var(--danger);
+    border: none;
+    margin-left: 8px;
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 0 0 rgba($complimentary, 1);
+    -webkit-animation: pulse 1s infinite;
+    &:hover {
+      animation: none;
+      cursor: pointer;
       transform: scale(1.3);
     }
   }
@@ -228,6 +241,9 @@ a {
   );
   float: left;
   margin-left: 27px;
+  &.cancel {
+    background: var(--danger);
+  }
 }
 .text-secondary {
   color: #828282;
@@ -241,9 +257,9 @@ a {
   border-color: var(--complimentary-color);
   border-width: 1px;
   background-color: var(--background);
-  padding: 0 15px 0 15px;
-  height: 36px;
-  font-size: 15px;
+  padding: 0 10px 0 10px;
+  height: 30px;
+  font-size: 14px;
   text-align: center;
   vertical-align: middle;
   color: var(--complimentary-color);

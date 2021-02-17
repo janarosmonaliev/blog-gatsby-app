@@ -25,10 +25,10 @@ const useStore = create((set) => {
             r: 0,
             geometry: new THREE.TextGeometry("</>", {
               font,
-              size: 4,
+              size: 3.5,
               height: 1,
               curveSegments: 4,
-              evelEnabled: false,
+              evelEnabled: true,
             }),
           },
           // {
@@ -37,14 +37,25 @@ const useStore = create((set) => {
           //   geometry: new THREE.SphereBufferGeometry(1, 32, 32),
           // },
           {
-            position: [-1.5, 0, 2],
+            position: [-1.6, 0, 2],
             r: 0.2,
-            geometry: new THREE.TetrahedronBufferGeometry(2),
+            geometry: new THREE.TextGeometry("{", {
+              font,
+              size: 3,
+              height: 1,
+              curveSegments: 4,
+              evelEnabled: false,
+            }),
           },
+          // {
+          //   position: [-1.5, 0, 2],
+          //   r: 0.2,
+          //   geometry: new THREE.TetrahedronBufferGeometry(2),
+          // },
           {
-            position: [1, -0.75, 4],
+            position: [0.3, -1.2, 4],
             r: 0.3,
-            geometry: new THREE.CylinderBufferGeometry(0.8, 0.8, 2, 32),
+            geometry: new THREE.TetrahedronBufferGeometry(1.5),
           },
           {
             position: [-0.7, 0.5, 6],
@@ -52,10 +63,21 @@ const useStore = create((set) => {
             geometry: new THREE.ConeGeometry(1.1, 1.7, 32),
           },
           {
-            position: [0.5, -1.2, -6],
-            r: 0.9,
-            geometry: new THREE.SphereBufferGeometry(1.5, 32, 32),
+            position: [0.5, -1.3, -6],
+            r: 0.0,
+            geometry: new THREE.TextGeometry("0", {
+              font,
+              size: 4,
+              height: 1,
+              curveSegments: 4,
+              evelEnabled: false,
+            }),
           },
+          // {
+          //   position: [0.5, -1.2, -6],
+          //   r: 0.9,
+          //   geometry: new THREE.SphereBufferGeometry(1.5, 32, 32),
+          // },
           {
             position: [-0.5, 2.5, -2],
             r: 0.6,
@@ -67,20 +89,31 @@ const useStore = create((set) => {
             geometry: new THREE.TorusBufferGeometry(1.1, 0.35, 16, 32),
           },
           {
-            position: [1.5, 0.5, -2],
-            r: 0.8,
-            geometry: new THREE.OctahedronGeometry(2),
+            position: [1.5, 0.2, -2],
+            r: 0.1,
+            geometry: new THREE.TextGeometry("1", {
+              font,
+              size: 3,
+              height: 1,
+              curveSegments: 4,
+              evelEnabled: false,
+            }),
           },
-          {
-            position: [-1, -0.5, -6],
-            r: 0.5,
-            geometry: new THREE.SphereBufferGeometry(1.5, 32, 32),
-          },
-          {
-            position: [1, 1.9, -1],
-            r: 0.2,
-            geometry: new THREE.BoxBufferGeometry(2.5, 2.5, 2.5),
-          },
+          // {
+          //   position: [1.5, 0.5, -2],
+          //   r: 0.8,
+          //   geometry: new THREE.OctahedronGeometry(2),
+          // },
+          // {
+          //   position: [-1, -0.5, -6],
+          //   r: 0.5,
+          //   geometry: new THREE.SphereBufferGeometry(1.5, 32, 32),
+          // },
+          // {
+          //   position: [1, 1.9, -1],
+          //   r: 0.2,
+          //   geometry: new THREE.BoxBufferGeometry(2.5, 2.5, 2.5),
+          // },
           {
             position: [-2, -2, -10],
             r: 0,
@@ -164,7 +197,7 @@ function Rig() {
   );
 }
 
-export default function() {
+export default function(props) {
   const [hovered, setHover] = useState(false);
   const { color } = useSpring({
     color: 1,
@@ -175,6 +208,7 @@ export default function() {
     <div id="canvas-wrapper">
       <Canvas
         concurrent
+        colorManagement={true}
         gl={{
           powerPreference: "high-performance",
           antialias: false,
@@ -183,7 +217,7 @@ export default function() {
           alpha: true,
         }}
         pixelRatio={1}
-        camera={{ position: [0, 0, 35], near: 1, far: 70, fov: 50 }}
+        camera={{ position: [0, 0, 33], near: 1, far: 70, fov: 50 }}
         shadowMap={true}
         id="canvas"
         onPointerOver={(event) => {
@@ -196,14 +230,23 @@ export default function() {
           color.reset();
         }}
       >
-        <color attach="background" args={["white"]} />
+        <color
+          attach={props.darkTheme ? "null" : "background"}
+          args={[props.darkTheme ? "#1d1d1d" : "white"]}
+        />
         <a.fog
           attach="fog"
           args={["#f6f8fc", 10, 50]}
           color={
             !hovered
-              ? color.to([0, 1], ["#f6f8fc", "#9776f9"])
-              : color.to([1, 0], ["#f6f8fc", "#9776f9"])
+              ? color.to(
+                  [0, 1],
+                  [props.darkTheme ? "#454545" : "#ebebeb", "#9776f9"]
+                )
+              : color.to(
+                  [1, 0],
+                  [props.darkTheme ? "#454545" : "#ebebeb", "#9776f9"]
+                )
           }
         />
 
@@ -214,10 +257,9 @@ export default function() {
         <Suspense fallback={null}>
           <Geometries />
           <ContactShadows
-            //
             rotation={[Math.PI / 2, 0, 0]}
             position={[0, -8, 0]}
-            opacity={0.3}
+            opacity={props.darkTheme ? 0.0 : 1}
             width={30}
             height={50}
             blur={1}

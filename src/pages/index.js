@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
@@ -8,7 +8,7 @@ import Navbar from "../components/appBar";
 // import Scramble from "react-scramble"; TODO Decide on using it
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 import { Grid, SvgIcon, Hidden } from "@material-ui/core";
-import { Box, Book, Terminal } from "react-feather";
+import { Box, Book, Terminal, X } from "react-feather";
 const useStyles = makeStyles({
   text: {
     fontSize: "48px",
@@ -115,10 +115,10 @@ function About(props) {
               </SvgIcon>
             </span>
             <span className={"label"}>EDUCATION</span>
-            <h1 className={classes.text}>
+            <h1 className={classes.subText}>
               Currently pursuing my degree in{" "}
               <span className="text-highlight">Computer Science</span> with HCI
-              specialization from Stony Brook University 💡
+              specialization from Stony Brook University 🎓
             </h1>
           </div>
         </div>
@@ -160,11 +160,10 @@ function About(props) {
             <button className="skills-button">JavaScript</button>
             <button className="skills-button">Python</button>
             <button className="skills-button">Java</button>
-            <p className="text-secondary">Frameworks</p>
+            <p className="text-secondary">Frameworks, Other</p>
             <button className="skills-button">ReactJS</button>
             <button className="skills-button">GatsbyJS</button>
             <button className="skills-button">ThreeJS</button>
-            <p className="text-secondary">Other</p>
             <button className="skills-button">Git</button>
             <button className="skills-button">Webpack</button>
             <button className="skills-button">react-spring</button>
@@ -174,30 +173,43 @@ function About(props) {
             <p className="text-secondary">Software</p>
             <button className="skills-button">Figma</button>
             <button className="skills-button">Adobe Creative Cloud</button>
-            <br></br>
-            <a onClick={() => parallax.scrollTo(0)}>Go Back</a>
           </div>
         </div>
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={2.9}
+        speed={0.5}
+        onClick={() => parallax.scrollTo(0)}
+      >
+        <span className={"icon-wrapper passive-cancel "}>
+          <SvgIcon fontSize={"default"}>
+            <X color="white"></X>
+          </SvgIcon>
+        </span>
+        <span className={"label passive "}>BACK TO THE TOP</span>
+        <br></br>
+        <div className={"label-line cancel"}></div>
       </ParallaxLayer>
     </Parallax>
   );
 }
 
 const IndexPage = ({ data: { site } }) => {
+  const [themeDark, setTheme] = useState(false);
   return (
     <div>
       <HelmetMeta website={site} />
       <div id="navbar-wrapper">
-        <Navbar></Navbar>
+        <Navbar toggleTheme={(e) => setTheme(e)}></Navbar>
       </div>
       <div id="landing-wrapper">
         <Grid container spacing={0} justify="center">
-          <Grid item lg={6} sm={12}>
+          <Grid item lg={5} sm={12}>
             <About></About>
           </Grid>
-          <Grid item lg={6} sm={12}>
+          <Grid item lg={7} sm={12}>
             {/* <Hidden mdDown> */}
-            <Canvas></Canvas>
+            <Canvas darkTheme={themeDark}></Canvas>
             {/* </Hidden> */}
           </Grid>
         </Grid>

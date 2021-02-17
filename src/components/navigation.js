@@ -34,7 +34,7 @@ export default function Navigation(props) {
         </Button>
       </Box>
 
-      <ThemeChanger />
+      <ThemeChanger callback={(e) => props.callback(e)} />
     </nav>
   );
 }
