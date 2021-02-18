@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import Navigation from "../components/navigation";
 import LogoSVG from "../components/LogoSvg";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
@@ -29,14 +28,14 @@ const theme = createMuiTheme({
   },
 });
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <ThemeProvider theme={theme}>
       <header className="site-header">
         <a className="logo-wrapper" href="/">
           <LogoSVG></LogoSVG>
         </a>
-        <Navigation />
+        <Navigation callback={(e) => props.toggleTheme(e)} />
       </header>
     </ThemeProvider>
   );
