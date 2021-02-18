@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import Navigation from "../components/navigation";
 import LogoSVG from "../components/LogoSvg";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";

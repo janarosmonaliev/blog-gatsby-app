@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   name: {
     marginLeft: "8px",
     fontSize: "14px",
-    ["@media(min-width: 768px)"]: {
+    "@media(min-width: 768px)": {
       fontSize: "15px",
     },
   },
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "8px",
     fontSize: "13px",
     color: "#758695",
-    ["@media(min-width: 768px)"]: {
+    "@media(min-width: 768px)": {
       fontSize: "14px",
     },
   },

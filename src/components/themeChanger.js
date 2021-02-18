@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ThemeToggler } from "gatsby-plugin-dark-mode";
 import { Sun, Moon } from "react-feather";
 import { IconButton, SvgIcon } from "@material-ui/core";
@@ -8,7 +8,7 @@ class ThemeChanger extends React.Component {
     return (
       <ThemeToggler>
         {({ theme, toggleTheme }) => {
-          this.props.callback(theme === "dark");
+          // this.props.callback(theme === "dark");
           return (
             <IconButton aria-label="close" size="medium">
               <label>

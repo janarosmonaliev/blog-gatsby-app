@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 import Canvas from "../three-js/canvas";
 import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "../components/appBar";
-// import Scramble from "react-scramble"; TODO Decide on using it
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 import { Grid, SvgIcon, Hidden } from "@material-ui/core";
 import { Box, Book, Terminal, X } from "react-feather";
 const useStyles = makeStyles({
@@ -14,7 +12,7 @@ const useStyles = makeStyles({
     fontSize: "36px",
     fontWeight: "600",
     marginTop: "24px",
-    ["@media(min-width: 768px)"]: {
+    "@media(min-width: 768px)": {
       fontSize: "48px",
     },
   },
@@ -22,7 +20,7 @@ const useStyles = makeStyles({
     fontSize: "30px",
     fontWeight: "600",
     marginTop: "24px",
-    ["@media(min-width: 768px)"]: {
+    "@media(min-width: 768px)": {
       fontSize: "36px",
     },
   },
@@ -200,7 +198,11 @@ function About(props) {
 }
 
 const IndexPage = ({ data: { site } }) => {
-  const [themeDark, setTheme] = useState(false);
+  let theme = false;
+  if (typeof localStorage !== `undefined`) {
+    theme = localStorage.theme === "dark";
+  }
+  const [themeDark, setTheme] = useState(theme);
   return (
     <div>
       <HelmetMeta website={site} />

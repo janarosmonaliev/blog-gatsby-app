@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import PostLink from "../components/post-link";
 import HeroHeader from "../components/heroHeader";
 
-const IndexPage = ({
+const BlogPage = ({
   data: {
     site,
     allMarkdownRemark: { edges },
@@ -56,7 +56,7 @@ const IndexPage = ({
   );
 };
 
-export default IndexPage;
+export default BlogPage;
 export const pageQuery = graphql`
   query blogPageQuery {
     site {

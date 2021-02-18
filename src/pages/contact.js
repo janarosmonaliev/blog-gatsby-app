@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { graphql, navigate } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
@@ -9,20 +9,19 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ImgBackground from "../images/contact-img.jpg";
-import { IconButton, SvgIcon, Box } from "@material-ui/core";
-import { ArrowLeft } from "react-feather";
+import { Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   alert: {
     fontFamily: "Inter, sans-serif",
-    ["@media(min-width: 768px)"]: {
+    "@media(min-width: 768px)": {
       padding: "15px 20px 15px 20px",
       fontSize: "16px",
     },
   },
   alertBox: {
     borderRadius: "5px",
-    ["@media(min-width: 768px)"]: {
+    "@media(min-width: 768px)": {
       marginBottom: "35px",
     },
   },

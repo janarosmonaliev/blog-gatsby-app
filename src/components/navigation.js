@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import ThemeChanger from "../components/themeChanger";
 import ResumeMenu from "../components/resumeMenu";
 import { Button, Box } from "@material-ui/core";

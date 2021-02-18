@@ -37,3 +37,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 };
+
+// TODO Fixing the build issue with Gatsby
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage.startsWith("build-javascript")) {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /react-spring/,
+            sideEffects: true,
+          },
+        ],
+      },
+    });
+  }
+};
