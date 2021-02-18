@@ -11,14 +11,20 @@ import { Grid, SvgIcon, Hidden } from "@material-ui/core";
 import { Box, Book, Terminal, X } from "react-feather";
 const useStyles = makeStyles({
   text: {
-    fontSize: "48px",
-    fontWeight: "600",
-    marginTop: "24px",
-  },
-  subText: {
     fontSize: "36px",
     fontWeight: "600",
     marginTop: "24px",
+    ["@media(min-width: 768px)"]: {
+      fontSize: "48px",
+    },
+  },
+  subText: {
+    fontSize: "30px",
+    fontWeight: "600",
+    marginTop: "24px",
+    ["@media(min-width: 768px)"]: {
+      fontSize: "36px",
+    },
   },
 });
 
@@ -164,12 +170,11 @@ function About(props) {
             <button className="skills-button">ReactJS</button>
             <button className="skills-button">GatsbyJS</button>
             <button className="skills-button">ThreeJS</button>
+            <button className="skills-button">Material UI</button>
+            <button className="skills-button">Bootstrap</button>
             <button className="skills-button">Git</button>
             <button className="skills-button">Webpack</button>
             <button className="skills-button">react-spring</button>
-            <p className="text-secondary">Design Systems</p>
-            <button className="skills-button">Material UI</button>
-            <button className="skills-button">Bootstrap</button>
             <p className="text-secondary">Software</p>
             <button className="skills-button">Figma</button>
             <button className="skills-button">Adobe Creative Cloud</button>
@@ -204,14 +209,14 @@ const IndexPage = ({ data: { site } }) => {
       </div>
       <div id="landing-wrapper">
         <Grid container spacing={0} justify="center">
-          <Grid item lg={5} sm={12}>
+          <Grid item lg={5} xs={12} md={6}>
             <About></About>
           </Grid>
-          <Grid item lg={7} sm={12}>
-            {/* <Hidden mdDown> */}
-            <Canvas darkTheme={themeDark}></Canvas>
-            {/* </Hidden> */}
-          </Grid>
+          <Hidden smDown>
+            <Grid item lg={7} xs={12} md={6}>
+              <Canvas darkTheme={themeDark}></Canvas>
+            </Grid>
+          </Hidden>
         </Grid>
       </div>
     </div>

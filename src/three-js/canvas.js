@@ -8,121 +8,123 @@ import { a, useTransition, useSpring } from "@react-spring/three";
 import create from "zustand";
 
 const useStore = create((set) => {
-  new THREE.FontLoader().load(
-    "https://raw.githubusercontent.com/janarosmonaliev/blog-gatsby-app/extended/src/files/font.json",
-    (font) => {
-      const config = {
-        font,
-        size: 15,
-        height: 2,
-        curveSegments: 4,
-        evelEnabled: false,
-      };
-      set({
-        items: [
-          {
-            position: [0.25, 1.8, -6],
-            r: 0,
-            geometry: new THREE.TextGeometry("</>", {
-              font,
-              size: 3.5,
-              height: 1,
-              curveSegments: 4,
-              evelEnabled: true,
-            }),
-          },
-          // {
-          //   position: [0.25, 1.8, -6],
-          //   r: 0.5,
-          //   geometry: new THREE.SphereBufferGeometry(1, 32, 32),
-          // },
-          {
-            position: [-1.6, 0, 2],
-            r: 0.2,
-            geometry: new THREE.TextGeometry("{", {
-              font,
-              size: 3,
-              height: 1,
-              curveSegments: 4,
-              evelEnabled: false,
-            }),
-          },
-          // {
-          //   position: [-1.5, 0, 2],
-          //   r: 0.2,
-          //   geometry: new THREE.TetrahedronBufferGeometry(2),
-          // },
-          {
-            position: [0.3, -1.2, 4],
-            r: 0.3,
-            geometry: new THREE.TetrahedronBufferGeometry(1.5),
-          },
-          {
-            position: [-0.7, 0.5, 6],
-            r: 0.4,
-            geometry: new THREE.ConeGeometry(1.1, 1.7, 32),
-          },
-          {
-            position: [0.5, -1.3, -6],
-            r: 0.0,
-            geometry: new THREE.TextGeometry("0", {
-              font,
-              size: 4,
-              height: 1,
-              curveSegments: 4,
-              evelEnabled: false,
-            }),
-          },
-          // {
-          //   position: [0.5, -1.2, -6],
-          //   r: 0.9,
-          //   geometry: new THREE.SphereBufferGeometry(1.5, 32, 32),
-          // },
-          {
-            position: [-0.5, 2.5, -2],
-            r: 0.6,
-            geometry: new THREE.IcosahedronBufferGeometry(2),
-          },
-          {
-            position: [-0.8, -0.75, 3],
-            r: 0.35,
-            geometry: new THREE.TorusBufferGeometry(1.1, 0.35, 16, 32),
-          },
-          {
-            position: [1.5, 0.2, -2],
-            r: 0.1,
-            geometry: new THREE.TextGeometry("1", {
-              font,
-              size: 3,
-              height: 1,
-              curveSegments: 4,
-              evelEnabled: false,
-            }),
-          },
-          // {
-          //   position: [1.5, 0.5, -2],
-          //   r: 0.8,
-          //   geometry: new THREE.OctahedronGeometry(2),
-          // },
-          // {
-          //   position: [-1, -0.5, -6],
-          //   r: 0.5,
-          //   geometry: new THREE.SphereBufferGeometry(1.5, 32, 32),
-          // },
-          // {
-          //   position: [1, 1.9, -1],
-          //   r: 0.2,
-          //   geometry: new THREE.BoxBufferGeometry(2.5, 2.5, 2.5),
-          // },
-          {
-            position: [-2, -2, -10],
-            r: 0,
-            geometry: new THREE.TextGeometry("J", config),
-          },
-        ],
-      });
-    }
-  );
+  if (typeof XMLHttpRequest !== `undefined`) {
+    new THREE.FontLoader().load(
+      "https://raw.githubusercontent.com/janarosmonaliev/blog-gatsby-app/extended/src/files/font.json",
+      (font) => {
+        const config = {
+          font,
+          size: 15,
+          height: 2,
+          curveSegments: 4,
+          evelEnabled: false,
+        };
+        set({
+          items: [
+            {
+              position: [0.25, 1.8, -6],
+              r: 0,
+              geometry: new THREE.TextGeometry("</>", {
+                font,
+                size: 3.5,
+                height: 1,
+                curveSegments: 4,
+                evelEnabled: true,
+              }),
+            },
+            // {
+            //   position: [0.25, 1.8, -6],
+            //   r: 0.5,
+            //   geometry: new THREE.SphereBufferGeometry(1, 32, 32),
+            // },
+            {
+              position: [-1.6, 0, 2],
+              r: 0.2,
+              geometry: new THREE.TextGeometry("{", {
+                font,
+                size: 3,
+                height: 1,
+                curveSegments: 4,
+                evelEnabled: false,
+              }),
+            },
+            // {
+            //   position: [-1.5, 0, 2],
+            //   r: 0.2,
+            //   geometry: new THREE.TetrahedronBufferGeometry(2),
+            // },
+            {
+              position: [0.3, -1.2, 4],
+              r: 0.3,
+              geometry: new THREE.TetrahedronBufferGeometry(1.5),
+            },
+            {
+              position: [-0.7, 0.5, 6],
+              r: 0.4,
+              geometry: new THREE.ConeGeometry(1.1, 1.7, 32),
+            },
+            {
+              position: [0.5, -1.3, -6],
+              r: 0.0,
+              geometry: new THREE.TextGeometry("0", {
+                font,
+                size: 4,
+                height: 1,
+                curveSegments: 4,
+                evelEnabled: false,
+              }),
+            },
+            // {
+            //   position: [0.5, -1.2, -6],
+            //   r: 0.9,
+            //   geometry: new THREE.SphereBufferGeometry(1.5, 32, 32),
+            // },
+            {
+              position: [-0.5, 2.5, -2],
+              r: 0.6,
+              geometry: new THREE.IcosahedronBufferGeometry(2),
+            },
+            {
+              position: [-0.8, -0.75, 3],
+              r: 0.35,
+              geometry: new THREE.TorusBufferGeometry(1.1, 0.35, 16, 32),
+            },
+            {
+              position: [1.5, 0.2, -2],
+              r: 0.1,
+              geometry: new THREE.TextGeometry("1", {
+                font,
+                size: 3,
+                height: 1,
+                curveSegments: 4,
+                evelEnabled: false,
+              }),
+            },
+            // {
+            //   position: [1.5, 0.5, -2],
+            //   r: 0.8,
+            //   geometry: new THREE.OctahedronGeometry(2),
+            // },
+            // {
+            //   position: [-1, -0.5, -6],
+            //   r: 0.5,
+            //   geometry: new THREE.SphereBufferGeometry(1.5, 32, 32),
+            // },
+            // {
+            //   position: [1, 1.9, -1],
+            //   r: 0.2,
+            //   geometry: new THREE.BoxBufferGeometry(2.5, 2.5, 2.5),
+            // },
+            {
+              position: [-2, -2, -10],
+              r: 0,
+              geometry: new THREE.TextGeometry("J", config),
+            },
+          ],
+        });
+      }
+    );
+  }
   return { items: [], material: new THREE.MeshStandardMaterial() };
 });
 
