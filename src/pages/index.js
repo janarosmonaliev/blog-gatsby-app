@@ -30,35 +30,44 @@ function HelmetMeta({ website, ...props }) {
   const site = website;
   return (
     <Helmet>
-      <title>{site.siteMetadata.title}</title>
-      <meta name="title" content={site.siteMetadata.title}></meta>
-      <meta name="description" content={site.siteMetadata.description} />
+      <title>{site.siteMetadata.home.title}</title>
+      <meta name="title" content={site.siteMetadata.home.title}></meta>
+      <meta name="description" content={site.siteMetadata.home.description} />
       <meta
         name="keywords"
-        content="computer science, design, resume, developer, software, engineer, UI"
+        content="Janar Osmonaliev, Zhanarbek, Janarbek, Stony Brook, developer, kyrgyzstan, Жанар, Осмоналиев, personal, website"
       ></meta>
       <meta name="viewport" content={site.siteMetadata.viewport}></meta>
-      <meta name="image" content={site.siteMetadata.image}></meta>
+      <meta name="image" content={site.siteMetadata.home.image}></meta>
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website"></meta>
       <meta property="og:url" content={site.siteMetadata.siteUrl}></meta>
-      <meta property="og:title" content={site.siteMetadata.title}></meta>
+      <meta property="og:title" content={site.siteMetadata.home.title}></meta>
       <meta
         property="og:description"
-        content={site.siteMetadata.description}
+        content={site.siteMetadata.home.description}
       ></meta>
-      <meta property="og:image" content={site.siteMetadata.image}></meta>
+      <meta property="og:image" content={site.siteMetadata.home.image}></meta>
 
       {/* Twitter */}
-      <meta property="twitter:card" content={site.siteMetadata.image}></meta>
+      <meta
+        property="twitter:card"
+        content={site.siteMetadata.home.image}
+      ></meta>
       <meta property="twitter:url" content={site.siteMetadata.siteUrl}></meta>
-      <meta property="twitter:title" content={site.siteMetadata.title}></meta>
+      <meta
+        property="twitter:title"
+        content={site.siteMetadata.home.title}
+      ></meta>
       <meta
         property="twitter:description"
-        content={site.siteMetadata.description}
+        content={site.siteMetadata.home.description}
       ></meta>
-      <meta property="twitter:image" content={site.siteMetadata.image}></meta>
+      <meta
+        property="twitter:image"
+        content={site.siteMetadata.home.image}
+      ></meta>
       <html lang="en" />
     </Helmet>
   );
@@ -230,11 +239,13 @@ export const pageQuery = graphql`
   query indexPageQuery {
     site {
       siteMetadata {
-        title
         siteUrl
-        description
         viewport
         image
+        home {
+          title
+          description
+        }
       }
     }
   }

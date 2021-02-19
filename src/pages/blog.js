@@ -30,7 +30,7 @@ const BlogPage = ({
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website"></meta>
-        <meta property="og:url" content={site.siteMetadata.siteUrl}></meta>
+        <meta property="og:url" content={site.siteMetadata.url}></meta>
         <meta property="og:title" content={site.siteMetadata.title}></meta>
         <meta
           property="og:description"
@@ -40,7 +40,7 @@ const BlogPage = ({
 
         {/* Twitter */}
         <meta property="twitter:card" content={site.siteMetadata.image}></meta>
-        <meta property="twitter:url" content={site.siteMetadata.siteUrl}></meta>
+        <meta property="twitter:url" content={site.siteMetadata.url}></meta>
         <meta property="twitter:title" content={site.siteMetadata.title}></meta>
         <meta
           property="twitter:description"
@@ -62,10 +62,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        siteUrl
         description
         viewport
         image
+        url
       }
     }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {

@@ -3,10 +3,15 @@
   "siteUrl": "https://janarosmonaliev.com",
   "description": "Welcome to my personal blog. Here I share my stories and ideas with the world. I am very passionate about programming and design. Currently, I am a Computer Science student at Stony Brook University",
   "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
-  "url": "https://janarosmonaliev.com",
+  "url": "https://janarosmonaliev.com/blog",
   "image": "https://janarosmonaliev.com/assets/site-thumbnail.png",
-  "home": {
-    "title": "Hi! I'm Zhanar Osmonaliev",
+  "blog": {
+    "title": "Zhanar Osmonaliev's Blog",
     "description": "Welcome to my personal blog. Here I share my stories and ideas with the world. I am very passionate about programming and design. Currently, I am a Computer Science student at Stony Brook University."
+  },
+  "home":{
+    "title": "Zhanarbek Osmonaliev | Personal Website",
+    "description": "Welcome to Zhanar Osmonaliev's personal portfolio website where you can know more about him and read his blog.",
+    "image": "https://janarosmonaliev.com/assets/janarosmonaliev-thumbnail.jpg"
   }
 }

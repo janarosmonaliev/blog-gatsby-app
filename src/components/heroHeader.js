@@ -9,7 +9,7 @@ export default () => {
         query HeadingQuery {
           site {
             siteMetadata {
-              home {
+              blog {
                 title
                 description
               }
@@ -45,12 +45,12 @@ export default () => {
             </Grid>
             <Grid item xs={12} md={7} className="headline-wrapper">
               <div className="headline">
-                {data.site.siteMetadata.home.title}
+                {data.site.siteMetadata.blog.title}
               </div>
               <div
                 className="primary-content"
                 dangerouslySetInnerHTML={{
-                  __html: data.site.siteMetadata.home.description,
+                  __html: data.site.siteMetadata.blog.description,
                 }}
               />
               <Link to="/contact" className="button -primary">
