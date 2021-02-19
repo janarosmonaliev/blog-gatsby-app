@@ -245,6 +245,7 @@ export const pageQuery = graphql`
         home {
           title
           description
+          image
         }
       }
     }
