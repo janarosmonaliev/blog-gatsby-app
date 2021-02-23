@@ -18,6 +18,7 @@ html,
 body {
   margin: 0;
   padding: 0 !important;
+  overflow-x: hidden;
 }
 * {
   margin-top: 0;
@@ -95,6 +96,7 @@ a {
   }
 }
 #navbar-wrapper {
+  overflow-x: scroll;
   z-index: 999;
   position: fixed;
   left: 10px;
@@ -104,9 +106,9 @@ a {
 }
 .site-wrapper {
   z-index: 999;
-  // position: ;
-  left: 10px;
-  right: 10px;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
   max-width: 1140px;
   margin: 0 auto;
 }
@@ -342,6 +344,7 @@ a {
   }
 }
 .site-header {
+  position: relative;
   display: flex;
   padding: 5px 0px 15px 0px;
   white-space: nowrap;

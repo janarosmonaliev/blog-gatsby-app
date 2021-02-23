@@ -9,7 +9,7 @@ import create from "zustand";
 const useStore = create((set) => {
   if (typeof XMLHttpRequest !== `undefined`) {
     new THREE.FontLoader().load(
-      "https://raw.githubusercontent.com/janarosmonaliev/blog-gatsby-app/extended/src/files/font.json",
+      "https://raw.githubusercontent.com/janarosmonaliev/blog-gatsby-app/master/src/files/font.json",
       (font) => {
         const config = {
           font,
