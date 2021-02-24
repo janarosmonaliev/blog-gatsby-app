@@ -104,6 +104,9 @@ a {
   max-width: 1140px;
   margin: 0 auto;
 }
+#navbar-wrapper::-webkit-scrollbar {
+  display: none;
+}
 .site-wrapper {
   z-index: 999;
   position: relative;
