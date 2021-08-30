@@ -76,7 +76,6 @@ collections:
     label: Portfolio
     folder: _data/portfolio
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    create: true
     fields:
       - label: Meta Description
         name: metaDescription
@@ -84,6 +83,6 @@ collections:
         required: false
       - label: Gallery
         name: gallery
-        widget: "list"
-        summary: "{{fields.image}}"
+        required: false
+        widget: list
         field: { label: Image, name: image, widget: image }
