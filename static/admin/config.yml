@@ -72,3 +72,21 @@ collections:
           config:
             multiple: false
       - { name: body, label: Body, widget: markdown }
+  - name: portfolio
+    label: Portfolio
+    folder: _data/portfolio
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true
+    fields:
+      - label: Meta Description
+        name: metaDescription
+        widget: text
+        required: false
+      - label: Featured Images
+        name: photos
+        widget: image
+        hint: "Image size 1080x1349 works best :)"
+        required: false
+        media_library:
+          config:
+            multiple: true
