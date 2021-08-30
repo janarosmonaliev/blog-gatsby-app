@@ -85,4 +85,6 @@ collections:
         name: gallery
         required: false
         widget: list
+        collapsed: true
+        add_to_top: true
         field: { label: Image, name: image, widget: image }
