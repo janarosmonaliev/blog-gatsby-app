@@ -76,18 +76,13 @@ collections:
     label: Storage
     folder: _data/storage
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    files:
-      - name: portfolio
-        label: Portfolio
-        fields:
-          - label: Meta Description
-            name: metaDescription
-            widget: text
-            required: false
-          - label: Gallery
-            name: gallery
-            required: false
-            widget: list
-            collapsed: true
-            add_to_top: true
-            field: { label: Image, name: image, widget: image }
+    fields:
+      - label: Meta Description
+        name: metaDescription
+        widget: text
+        required: false
+      - label: Gallery
+        name: gallery
+        required: false
+        widget: list
+        field: { label: Image, name: image, widget: image }
