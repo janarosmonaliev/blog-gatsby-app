@@ -82,11 +82,8 @@ collections:
         name: metaDescription
         widget: text
         required: false
-      - label: Featured Images
-        name: photos
-        widget: image
-        hint: "Image size 1080x1349 works best :)"
-        required: false
-        media_library:
-          config:
-            multiple: true
+      - label: Gallery
+        name: gallery
+        widget: "list"
+        summary: "{{fields.image}}"
+        field: { label: Image, name: image, widget: image }
