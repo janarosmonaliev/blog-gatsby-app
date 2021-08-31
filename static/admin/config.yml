@@ -74,7 +74,9 @@ collections:
       - { name: body, label: Body, widget: markdown }
   - name: storage
     label: Storage
+    create: true
     folder: _data/storage
+    identifier_field: metaDescription
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - label: Meta Description
@@ -84,5 +86,7 @@ collections:
       - label: Gallery
         name: gallery
         required: false
+        minimize_collapsed: true
         widget: list
+        add_to_top: true
         field: { label: Image, name: image, widget: image }
