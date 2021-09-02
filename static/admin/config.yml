@@ -76,17 +76,17 @@ collections:
     label: Storage
     create: true
     folder: _data/storage
-    identifier_field: metaDescription
+    identifier_field: pageDescription
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - label: Meta Description
-        name: metaDescription
+      - label: Page Description
+        name: pageDescription
         widget: text
         required: false
       - label: Gallery
         name: gallery
         required: false
+        add_to_top: true
         minimize_collapsed: true
         widget: list
-        add_to_top: true
         field: { label: Image, name: image, widget: image }
