@@ -76,17 +76,22 @@ collections:
     label: Storage
     create: true
     folder: _data/storage
-    identifier_field: pageDescription
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: metaDescription
+    slug: "{{slug}}"
     fields:
+      - name: path
+        label: Path
+        widget: string
+        pattern: [/]
+        hint: "Path must start with /"
       - label: Page Description
-        name: pageDescription
+        name: metaDescription
         widget: text
         required: false
       - label: Gallery
         name: gallery
         required: false
-        add_to_top: true
         minimize_collapsed: true
         widget: list
+        add_to_top: true
         field: { label: Image, name: image, widget: image }
