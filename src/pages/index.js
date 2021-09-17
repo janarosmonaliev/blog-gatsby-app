@@ -7,6 +7,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "../components/appBar";
 import { Grid, SvgIcon, Hidden, Container } from "@material-ui/core";
 import { Box, Book, Terminal, X } from "react-feather";
+import TextLoop from "react-text-loop";
+import LandingBackground from "../images/landing-page-gradient.jpg";
 const useStyles = makeStyles({
   // styles here
   textDisplay: {
@@ -17,6 +19,21 @@ const useStyles = makeStyles({
       fontSize: "56px",
       lineHeight: "64px",
     },
+  },
+  backgroundWrapper: {
+    display: "block",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center bottom",
+    backgroundSize: "cover",
+    background:
+      "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%) center bottom",
+    position: "fixed",
+    width: "100%",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    padding: 0,
   },
 });
 
@@ -70,9 +87,54 @@ function HelmetMeta({ website, ...props }) {
 const Content = () => {
   const classes = useStyles();
   return (
-    <Parallax pages={2}>
+    <Parallax pages={1.5}>
       <ParallaxLayer
         offset={0}
+        speed={1}
+        style={{
+          overflow: "visible",
+        }}
+      >
+        <div
+          className={classes.backgroundWrapper}
+          style={{
+            backgroundImage: "url(" + LandingBackground + ")",
+            opacity: 1,
+          }}
+        ></div>
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={0}
+        speed={1.5}
+        style={{
+          display: "flex",
+          width: "100%",
+          left: "10px",
+          right: "10px",
+          maxWidth: "1140px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          alignItems: "center",
+        }}
+      >
+        <h1 className={classes.textDisplay}>
+          I am Zhanar.
+          <br />I{" "}
+          <TextLoop
+            delay={300}
+            mask={true}
+            interval={2000}
+            // springConfig={{ stiffness: 180, damping: 10 }}
+          >
+            <span className={"text-highlight"}>develop</span>
+            <span className={"text-highlight"}>design</span>
+            <span className={"text-highlight"}>create</span>
+          </TextLoop>{" "}
+          user-friendly products.
+        </h1>
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={0.9999}
         speed={1}
         style={{
           display: "flex",
@@ -85,20 +147,7 @@ const Content = () => {
           alignItems: "center",
         }}
       >
-        <p className={classes.textDisplay}>
-          Hi, I am Zhanar. <br /> I <span>develop</span> user-friendly products.
-        </p>
-      </ParallaxLayer>
-      <ParallaxLayer
-        offset={0.5}
-        speed={2}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <p>Scroll down</p>
+        <p>Hi there</p>
       </ParallaxLayer>
     </Parallax>
   );
