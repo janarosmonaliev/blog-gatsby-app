@@ -62,6 +62,7 @@ body.light {
   --flair-color: #758695;
   --complimentary-color: #ff642e;
   --danger: #ff1f57;
+  --opacity-global: 1;
 }
 body.dark {
   --primary-color: #8862f8;
@@ -87,6 +88,7 @@ body.dark {
   --flair-color: #c4cdd5;
   --complimentary-color: #f2994a;
   --danger: #ff3366;
+  --opacity-global: 0.25;
 }
 /* System Fonts as used by Medium and WordPress */
 body {
@@ -122,7 +124,82 @@ a {
   max-width: 1140px;
   margin: 0 auto;
 }
-
+// Landing Page
+.avatar-card {
+  position: relative;
+  // width: 500px;
+  // height: 500px;
+  border-radius: 5px;
+  // box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s, opacity 0.5s;
+  will-change: transform;
+  // border: 5px solid white;
+  cursor: grab;
+  overflow: hidden;
+  touch-action: none;
+  &:hover {
+    // box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  }
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    will-change: transform;
+  }
+}
+.landing-page-background {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  opacity: var(--opacity-global);
+}
+.landing-social-widget {
+  position: absolute;
+  z-index: 999;
+  margin-bottom: var(--space-md);
+  margin-left: var(--space-md);
+  margin-right: var(--space-md);
+  // top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.landing-icon-wrapper {
+  text-decoration: none;
+  color: var(--text-color);
+  display: inline-flex;
+  padding: 8px;
+  border-radius: 50%;
+  vertical-align: middle;
+  transition: color ease-in-out 200ms;
+  // background-color: var(--primary-color);
+  // border-style: solid;
+  // border-color: var(--primary-color);
+  // border-width: 2px;
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+.project-card {
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  // align-items: center;
+  border-radius: 10px;
+  // height: auto;
+}
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
 .text-secondary {
   color: #828282;
   vertical-align: middle;
@@ -245,7 +322,7 @@ a {
   order: 1;
 }
 .button {
-  padding: 20px 27px;
+  padding: 15px 30px;
   display: inline-block;
   background: var(--btn-bg);
   border: 1px solid var(--btn-bdr);
