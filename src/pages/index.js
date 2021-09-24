@@ -1,28 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Helmet from "react-helmet";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
+import { useSpring, animated, to } from "@react-spring/web";
+import { useGesture } from "react-use-gesture";
 import Canvas from "../three-js/canvas";
 import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "../components/appBar";
-import { Grid, SvgIcon, Hidden } from "@material-ui/core";
-import { Box, Book, Terminal, X } from "react-feather";
+import GithubGlobeImage from "../images/github-globe-feature.png";
+import TinyDeskImage from "../images/tinydesk-feature.png";
+import {
+  Grid,
+  SvgIcon,
+  Tooltip,
+  Hidden,
+  Container,
+  Button,
+} from "@material-ui/core";
+import { GitHub, Dribbble, Camera } from "react-feather";
+import TextLoop from "react-text-loop";
+import LandingBackground from "../images/landing-page-gradient.png";
+import LandingAvatar from "../images/landing-avatar.jpg";
 const useStyles = makeStyles({
-  text: {
+  // styles here
+  textDisplay: {
+    fontFamily: "PP Neue Machine, Inter, sans-serif",
     fontSize: "36px",
-    fontWeight: "600",
-    marginTop: "24px",
+    lineHeight: "44px",
     "@media(min-width: 768px)": {
-      fontSize: "48px",
+      fontSize: "56px",
+      lineHeight: "64px",
     },
   },
-  subText: {
-    fontSize: "30px",
-    fontWeight: "600",
-    marginTop: "24px",
+  textHeading: {
+    marginBottom: "28px",
+    fontFamily: "PP Neue Machine, Inter, sans-serif",
+    fontSize: "28px",
+    lineHeight: "28px",
     "@media(min-width: 768px)": {
       fontSize: "36px",
+      lineHeight: "32px",
     },
+  },
+  text: {
+    fontSize: "18px",
+    fontWeight: 300,
+    lineHeight: "32px",
   },
 });
 
@@ -73,162 +96,355 @@ function HelmetMeta({ website, ...props }) {
   );
 }
 
-function About(props) {
-  let parallax = null;
+const Avatar = () => {
+  const calcX = (y, ly) => -(y - ly - window.innerHeight / 2) / 40;
+  const calcY = (x, lx) => (x - lx - window.innerWidth / 2) / 40;
+
+  useEffect(() => {
+    const preventDefault = (e) => e.preventDefault();
+    document.addEventListener("gesturestart", preventDefault);
+    document.addEventListener("gesturechange", preventDefault);
+
+    return () => {
+      document.removeEventListener("gesturestart", preventDefault);
+      document.removeEventListener("gesturechange", preventDefault);
+    };
+  }, []);
+
+  const domTarget = useRef(null);
+  const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(
+    () => ({
+      rotateX: 0,
+      rotateY: 0,
+      rotateZ: 0,
+      scale: 1,
+      zoom: 0,
+      x: 0,
+      y: 0,
+      config: { mass: 5, tension: 350, friction: 40 },
+    })
+  );
+
+  useGesture(
+    {
+      onPinch: ({ offset: [d, a] }) => api({ zoom: d / 100, rotateZ: a }),
+      onMove: ({ xy: [px, py], dragging }) =>
+        !dragging &&
+        api({
+          rotateX: calcX(py, y.get()),
+          rotateY: calcY(px, x.get()),
+          scale: 1.05,
+        }),
+      onHover: ({ hovering }) =>
+        !hovering && api({ rotateX: 0, rotateY: 0, scale: 1 }),
+    },
+    { domTarget, eventOptions: { passive: false } }
+  );
+
+  return (
+    <animated.div
+      ref={domTarget}
+      className={"avatar-card"}
+      style={{
+        transform: "perspective(1000px)",
+        x,
+        y,
+        scale: to([scale, zoom], (s, z) => s + z),
+        rotateX,
+        rotateY,
+        rotateZ,
+      }}
+    >
+      <animated.div
+      // style={{ backgroundImage: `url(${LandingAvatar})` }}
+      >
+        <img src={LandingAvatar} className="img-fluid"></img>
+      </animated.div>
+    </animated.div>
+  );
+};
+
+const SocialWidget = () => {
+  return (
+    <div className="landing-social-widget">
+      <Grid
+        container
+        justifyContent="flex-end"
+        alignItems="flex-start"
+        direction="column"
+        spacing={2}
+      >
+        <Grid item>
+          <Tooltip title="Github" placement="right" arrow>
+            <a
+              className="landing-icon-wrapper"
+              href="https://github.com/janarosmonaliev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SvgIcon fontSize={"small"}>
+                <GitHub></GitHub>
+              </SvgIcon>
+            </a>
+          </Tooltip>
+        </Grid>
+
+        <Grid item>
+          <Tooltip title="Dribbble" placement="right" arrow>
+            <a
+              className="landing-icon-wrapper"
+              href="https://dribbble.com/janarosmonaliev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SvgIcon fontSize={"small"}>
+                <Dribbble></Dribbble>
+              </SvgIcon>
+            </a>
+          </Tooltip>
+        </Grid>
+        <Grid item>
+          <Tooltip title="Unsplash" placement="right" arrow>
+            <a
+              className="landing-icon-wrapper"
+              href="https://unsplash.com/@janarosmonaliev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SvgIcon fontSize={"small"}>
+                <Camera></Camera>
+              </SvgIcon>
+            </a>
+          </Tooltip>
+        </Grid>
+      </Grid>
+    </div>
+  );
+};
+
+const Content = () => {
   const classes = useStyles();
   return (
-    <Parallax
-      ref={(ref) => (parallax = ref)}
-      vertical
-      scrolling={false}
-      pages={3}
-      id="parallax-wrapper"
-    >
+    <Parallax pages={4}>
       <ParallaxLayer
         offset={0}
-        speed={1.0}
-        // onClick={() => parallax.scrollTo(1)}
+        speed={1}
+        style={{
+          overflow: "visible",
+          top: 0,
+        }}
       >
-        <div className={"parallax-container"}>
-          <div>
-            <span className="icon-wrapper">
-              <SvgIcon fontSize={"default"}>
-                <Box color="white"></Box>
-              </SvgIcon>
-            </span>
-            <span className={"label"}>WELCOME</span>
-            <h1 className={classes.text}>
-              Hi there! <br /> I am{" "}
-              <span className="text-highlight">Zhanar</span>, <br /> a web
-              developer 🚀
-            </h1>
-          </div>
-        </div>
+        <div
+          className={"landing-page-background"}
+          style={{
+            backgroundImage: "url(" + LandingBackground + ")",
+          }}
+        ></div>
       </ParallaxLayer>
       <ParallaxLayer
-        offset={0.9}
-        speed={0.5}
-        onClick={() => parallax.scrollTo(1)}
+        offset={0}
+        speed={1.5}
+        style={{
+          display: "flex",
+          width: "100%",
+          left: "10px",
+          right: "10px",
+          maxWidth: "1140px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          alignItems: "center",
+        }}
       >
-        <span className="icon-wrapper passive">
-          <SvgIcon fontSize={"default"}>
-            <Book color="white"></Book>
-          </SvgIcon>
-        </span>
-        <span className={"label passive"}>EDUCATION</span>
-        <br></br>
-        <div className="label-line"></div>
-      </ParallaxLayer>
-      <ParallaxLayer offset={1} speed={1}>
-        <div className={"parallax-container"}>
-          <div>
-            <span className="icon-wrapper">
-              <SvgIcon fontSize={"default"}>
-                <Book color="white"></Book>
-              </SvgIcon>
-            </span>
-            <span className={"label"}>EDUCATION</span>
-            <h1 className={classes.subText}>
-              Currently pursuing my degree in{" "}
-              <span className="text-highlight">Computer Science</span> with HCI
-              specialization from Stony Brook University 🎓
-            </h1>
-          </div>
-        </div>
+        <h1 className={classes.textDisplay}>
+          I am Zhanar.
+          <br />I{" "}
+          <TextLoop
+            delay={300}
+            mask={true}
+            interval={2000}
+            // springConfig={{ stiffness: 180, damping: 10 }}
+          >
+            <span className={"text-highlight"}>develop</span>
+            <span className={"text-highlight"}>design</span>
+            <span className={"text-highlight"}>create</span>
+          </TextLoop>{" "}
+          user-friendly products.
+        </h1>
       </ParallaxLayer>
       <ParallaxLayer
-        offset={1.9}
-        speed={0.5}
-        onClick={() => parallax.scrollTo(2)}
+        offset={0.9999}
+        speed={0}
+        style={{
+          display: "flex",
+          width: "100%",
+          left: "10px",
+          right: "10px",
+          maxWidth: "1140px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          alignItems: "center",
+        }}
       >
-        <span className="icon-wrapper passive">
-          <SvgIcon fontSize={"default"}>
-            <Terminal color="white"></Terminal>
-          </SvgIcon>
-        </span>
-        <span className={"label passive"}>SKILLS</span>
-        <br></br>
-        <div className="label-line"></div>
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          spacing={5}
+        >
+          <Grid item xs={12} md={6}>
+            <h1 className={classes.textHeading + " text-highlight"}>
+              About me
+            </h1>
+            <p className={classes.text}>
+              Hello! My name is Zhanar Osmonaliev. I am a student software
+              developer. I believe in design quality and always pay attention to
+              details because that's what makes a great product.
+            </p>
+            <p className={classes.text}>
+              I have led a team of students as a Designer and a Lead Developer
+              to create{" "}
+              <a href="tinydesk.me" target="_blank">
+                TinyDesk
+              </a>{" "}
+              - a web application to help you manage your bookmarks and boost
+              your productivity.
+            </p>
+            <p className={classes.text}>
+              I am currently pursuing an undergraduate degree in Computer
+              Science at Stony Brook University.
+            </p>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Avatar />
+          </Grid>
+        </Grid>
       </ParallaxLayer>
-
       <ParallaxLayer
         offset={2}
-        speed={1.0}
-        onClick={() => parallax.scrollTo(0)}
+        speed={0}
+        style={{
+          display: "flex",
+          width: "100%",
+          left: "10px",
+          right: "10px",
+          maxWidth: "1140px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          alignItems: "top",
+          justifyContent: "start",
+        }}
       >
-        <div className={"parallax-container"}>
-          <div>
-            <span className="icon-wrapper">
-              <SvgIcon fontSize={"default"}>
-                <Terminal color="white"></Terminal>
-              </SvgIcon>
-            </span>
-            <span className={"label"}>SKILLS</span>
-            <h1 className={classes.subText}>
-              I am very passionate about{" "}
-              <span className="text-highlight">web development</span> and{" "}
-              <span className="text-highlight">design</span> 💻
-            </h1>
-            <p className="text-secondary">Languages</p>
-            <button className="skills-button">JavaScript</button>
-            <button className="skills-button">Python</button>
-            <button className="skills-button">Java</button>
-            <p className="text-secondary">Frameworks, Other</p>
-            <button className="skills-button">ReactJS</button>
-            <button className="skills-button">GatsbyJS</button>
-            <button className="skills-button">ThreeJS</button>
-            <button className="skills-button">Material UI</button>
-            <button className="skills-button">Bootstrap</button>
-            <button className="skills-button">Git</button>
-            <button className="skills-button">Webpack</button>
-            <button className="skills-button">react-spring</button>
-            <p className="text-secondary">Software</p>
-            <button className="skills-button">Figma</button>
-            <button className="skills-button">Adobe Creative Cloud</button>
-          </div>
-        </div>
+        <h1 className={classes.textDisplay + " text-highlight"}>Projects</h1>{" "}
+        <br />
       </ParallaxLayer>
       <ParallaxLayer
-        offset={2.9}
-        speed={0.5}
-        onClick={() => parallax.scrollTo(0)}
+        offset={2}
+        speed={0}
+        style={{
+          display: "flex",
+          width: "100%",
+          left: "10px",
+          right: "10px",
+          maxWidth: "1140px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-        <span className={"icon-wrapper passive-cancel "}>
-          <SvgIcon fontSize={"default"}>
-            <X color="white"></X>
-          </SvgIcon>
-        </span>
-        <span className={"label passive "}>BACK TO THE TOP</span>
-        <br></br>
-        <div className={"label-line cancel"}></div>
+        {/* <div className="project-card" style={{ background: "red" }}> */}
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          spacing={10}
+          style={{ flexGrow: "1" }}
+          className="project-card"
+          style={{ background: "rgba(4, 15, 30, 1)" }}
+        >
+          <Grid item xs={12} md={5} style={{ color: "white" }}>
+            <h1 className={classes.textHeading}>Github Globe</h1>
+            <p className={classes.text}>
+              Data visualization on globe implemented with ThreeJS. The project
+              was inspired by Github's new homepage.
+            </p>
+            <Link
+              to="https://github.com/janarosmonaliev/github-globe"
+              className="button -primary"
+            >
+              Learn more
+            </Link>
+          </Grid>
+          <Grid item xs={12} md={7} order={{ md: 1, lg: 1 }}>
+            <img src={GithubGlobeImage} className="img-fluid"></img>
+          </Grid>
+        </Grid>
+        {/* </div> */}
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={3}
+        speed={0}
+        style={{
+          display: "flex",
+          width: "100%",
+          left: "10px",
+          right: "10px",
+          maxWidth: "1140px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {/* <div className="project-card" style={{ background: "red" }}> */}
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          spacing={10}
+          style={{ flexGrow: "1" }}
+          className="project-card"
+          style={{ background: "rgba(86, 184, 248, 1)" }}
+        >
+          <Grid item xs={12} md={5} style={{ color: "white" }}>
+            <h1 className={classes.textHeading}>TinyDesk</h1>
+            <p className={classes.text}>
+              An application for bookmark management and productivity. Developed
+              and shipped during a CSE416 course at Stony Brook University.
+            </p>
+            <Link
+              to="https://www.behance.net/gallery/125950519/TinyDesk-Product-Design"
+              className="button -primary"
+            >
+              Learn more
+            </Link>
+          </Grid>
+          <Grid item xs={12} md={7} order={{ md: 1, lg: 1 }}>
+            <img src={TinyDeskImage} className="img-fluid"></img>
+          </Grid>
+        </Grid>
+        {/* </div> */}
       </ParallaxLayer>
     </Parallax>
   );
-}
+};
 
 const IndexPage = ({ data: { site } }) => {
-  let theme = false;
-  if (typeof localStorage !== `undefined`) {
-    theme = localStorage.theme === "dark";
-  }
-  const [themeDark, setTheme] = useState(theme);
+  // const [themeDark, setTheme] = useState(theme);
   return (
     <div>
       <HelmetMeta website={site} />
       <div id="navbar-wrapper">
-        <Navbar toggleTheme={(e) => setTheme(e)}></Navbar>
+        <Navbar></Navbar>
       </div>
       <div id="landing-wrapper">
-        <Grid container spacing={0} justify="center">
-          <Grid item lg={5} xs={12} md={6}>
-            <About></About>
-          </Grid>
-          <Hidden smDown>
-            <Grid item lg={7} xs={12} md={6}>
-              <Canvas darkTheme={themeDark}></Canvas>
-            </Grid>
-          </Hidden>
-        </Grid>
+        <Hidden mdDown>
+          <SocialWidget />
+        </Hidden>
+        <Content />
       </div>
     </div>
   );
