@@ -33,17 +33,6 @@ const useStyles = makeStyles({
       lineHeight: "72px",
     },
   },
-  textHeading: {
-    marginBottom: "28px",
-    fontFamily: "Inter, sans-serif",
-    fontSize: "28px",
-    lineHeight: "28px",
-    fontWeight: 600,
-    "@media(min-width: 768px)": {
-      fontSize: "36px",
-      lineHeight: "32px",
-    },
-  },
   text: {
     fontSize: "16px",
     fontWeight: 400,
@@ -56,6 +45,13 @@ const useStyles = makeStyles({
   },
   textSecondary: {
     color: "#828282",
+  },
+  paperTinyDesk: {
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)), url(${TinyDeskImage})`,
+    backgroundRepeat: false,
+    backgroundSize: "cover",
+    backgroundPosition: "top center",
   },
 });
 
@@ -109,7 +105,7 @@ function HelmetMeta({ website, ...props }) {
 const StyledPaper = withStyles({
   root: {
     borderRadius: "30px",
-    minHeight: "400px",
+    minHeight: "420px",
     padding: "2rem",
     color: "inherit",
   },
@@ -203,8 +199,23 @@ const IndexPage = ({ data: { site } }) => {
 
           <Box mt={20} mb={30}>
             <h1 className={classes.textDisplay}>Projects</h1>
-            <Grid container spacing={0}>
-              Hey
+            <Grid container spacing={2}>
+              <Grid item xs={12} md={6}>
+                <StyledPaper className="styled-paper" elevation={0}>
+                  hi, im stuck here.
+                </StyledPaper>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <StyledPaper
+                  className={
+                    classes.paperTinyDesk + " styled-paper text-center"
+                  }
+                  elevation={0}
+                >
+                  {/* <h2 className="text-constant-light">Tiny Desk</h2> */}
+                  {/* <p className="text-constant-light">Hello there</p> */}
+                </StyledPaper>
+              </Grid>
             </Grid>
           </Box>
         </Container>

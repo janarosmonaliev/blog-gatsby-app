@@ -577,7 +577,8 @@ body.light {
 }
 
 // NOTE V2 Updates go here
-h1 {
+h1,
+h2 {
   font-weight: 600;
 }
 .img-avatar-animoji {
@@ -600,4 +601,10 @@ h1 {
 }
 .inner-box {
   border-radius: 15px;
+}
+.text-center {
+  text-align: center;
+}
+.text-constant-light {
+  color: white;
 }
