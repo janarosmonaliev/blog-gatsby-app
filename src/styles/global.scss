@@ -41,7 +41,7 @@ body.light {
   --text-color: #000000;
   --site-header: var(--background);
   --card-bg: #fff;
-  --card-bdr: #eee;
+  --card-bdr: rgb(248, 248, 248);
   --card-shadow: #d5d5d5;
   --btn-bg: var(--background);
   --btn-bdr: #d3d6e7;
@@ -83,6 +83,7 @@ body.dark {
   --opacity-global: 0.25;
 }
 /* System Fonts as used by Medium and WordPress */
+
 body {
   font-family: $font-family;
   background-color: var(--background);
@@ -588,4 +589,15 @@ h1 {
   &:hover {
     background: var(--complimentary-color);
   }
+}
+.styled-paper {
+  // background-color: white !important;
+  background-color: var(--card-bdr) !important;
+}
+#landing-wrapper {
+  // FIXME This fixed double scrollbar issue
+  overflow-y: auto;
+}
+.inner-box {
+  border-radius: 15px;
 }

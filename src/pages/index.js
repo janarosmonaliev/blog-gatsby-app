@@ -13,19 +13,21 @@ import {
   Container,
   Button,
   Box,
+  Paper,
 } from "@material-ui/core";
 import { GitHub, Dribbble, Camera } from "react-feather";
 import TextLoop from "react-text-loop";
 import LandingBackground from "../images/landing-page-gradient.png";
 import LandingAvatar from "../images/landing-avatar.jpg";
 import Avatar from "../images/avatar-animoji.png";
+import { withStyles } from "@material-ui/styles";
 const useStyles = makeStyles({
   // styles here
   textDisplay: {
     fontWeight: 700,
     fontFamily: "PP Neue Machine, Inter, sans-serif",
     fontSize: "36px",
-    lineHeight: "44px",
+    lineHeight: "48px",
     "@media(min-width: 768px)": {
       fontSize: "60px",
       lineHeight: "72px",
@@ -33,18 +35,24 @@ const useStyles = makeStyles({
   },
   textHeading: {
     marginBottom: "28px",
-    fontFamily: "PP Neue Machine, Inter, sans-serif",
+    fontFamily: "Inter, sans-serif",
     fontSize: "28px",
     lineHeight: "28px",
+    fontWeight: 600,
     "@media(min-width: 768px)": {
       fontSize: "36px",
       lineHeight: "32px",
     },
   },
   text: {
-    fontSize: "18px",
-    fontWeight: 300,
-    lineHeight: "32px",
+    fontSize: "16px",
+    fontWeight: 400,
+    lineHeight: "28px",
+    "@media(min-width: 768px)": {
+      fontSize: "18px",
+      fontWeight: 400,
+      lineHeight: "32px",
+    },
   },
   textSecondary: {
     color: "#828282",
@@ -98,14 +106,23 @@ function HelmetMeta({ website, ...props }) {
   );
 }
 
+const StyledPaper = withStyles({
+  root: {
+    borderRadius: "30px",
+    minHeight: "400px",
+    padding: "2rem",
+    color: "inherit",
+  },
+})(Paper);
+
 const IndexPage = ({ data: { site } }) => {
   const classes = useStyles();
   return (
     <div>
-      <HelmetMeta website={site} />
       <div id="navbar-wrapper">
         <Navbar></Navbar>
       </div>
+      <HelmetMeta website={site} />
       <div id="landing-wrapper">
         <Container maxWidth="lg">
           {/* NOTE Welcome page area */}
@@ -122,13 +139,15 @@ const IndexPage = ({ data: { site } }) => {
             </Box>
             <h1 className={classes.textDisplay}>
               Hi, I'm Zhanar{" "}
-              <span className={classes.textSecondary}>(Janar)</span>
+              <Hidden smDown>
+                <span className={classes.textSecondary}>(Janar)</span>
+              </Hidden>
               <br />I{" "}
               <TextLoop
                 delay={300}
                 mask={true}
                 interval={2000}
-                // springConfig={{ stiffness: 180, damping: 10 }}
+                springConfig={{ stiffness: 200, damping: 15 }}
               >
                 <span className={"text-highlight"}>develop</span>
                 <span className={"text-highlight"}>design</span>
@@ -137,8 +156,56 @@ const IndexPage = ({ data: { site } }) => {
               user-friendly products.
             </h1>
           </Box>
-          <Box>
-            <h1 className={classes.textHeading}>Projects</h1>
+          {/* NOTE About me  */}
+          <Box mt={20} mb={30}>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <StyledPaper
+                  className="styled-paper"
+                  elevation={0}
+                  // variant="outlined"
+                >
+                  <Grid container spacing={4} alignItems="center">
+                    <Grid item xs={12} md={6}>
+                      <h1>About me</h1>
+                      <p className={classes.text}>
+                        My name is Zhanar Osmonaliev. I am a student software
+                        developer. I believe in design quality and always pay
+                        attention to details because that's what makes a great
+                        product.
+                      </p>
+                      <p className={classes.text}>
+                        I have led a team of students as a Designer and a Lead
+                        Developer to create{" "}
+                        <a href="https://www.tinydesk.me" target="_blank">
+                          TinyDesk
+                        </a>{" "}
+                        - a web application to help you manage your bookmarks
+                        and boost your productivity.
+                      </p>
+                      <p className={classes.text}>
+                        I am currently pursuing an undergraduate degree in
+                        Computer Science with a specialization in AI and Data
+                        Science at Stony Brook University.
+                      </p>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                      <img
+                        src={LandingAvatar}
+                        className="img-fluid inner-box"
+                      ></img>
+                    </Grid>
+                  </Grid>
+                </StyledPaper>
+              </Grid>
+            </Grid>
+          </Box>
+
+          <Box mt={20} mb={30}>
+            <h1 className={classes.textDisplay}>Projects</h1>
+            <Grid container spacing={0}>
+              Hey
+            </Grid>
           </Box>
         </Container>
       </div>
