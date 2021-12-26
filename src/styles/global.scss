@@ -70,7 +70,7 @@ body.dark {
   --featured-bg: #66578d;
   --featured-text: #fff;
   --secondary-color: #5f46aa;
-  --background: #1d1d1d;
+  --background: #0e0e0e;
   --text-color: rgba(255, 255, 255, 0.88);
   --text-secondary-color: rgba(255, 255, 255, 0.66);
   --site-header: var(--background);
@@ -107,12 +107,13 @@ a {
 #navbar-wrapper {
   overflow-x: scroll;
   z-index: 999;
-  position: fixed;
+  // position: fixed;
   left: 10px;
   right: 10px;
-  max-width: 1140px;
+  max-width: 1260px;
   margin: 0 auto;
 }
+
 #navbar-wrapper::-webkit-scrollbar {
   display: none;
 }

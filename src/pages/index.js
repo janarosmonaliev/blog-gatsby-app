@@ -103,7 +103,14 @@ const IndexPage = ({ data: { site } }) => {
       <div id="navbar-wrapper">
         <Navbar></Navbar>
       </div>
-      <div id="landing-wrapper">Hello World</div>
+      <div id="landing-wrapper">
+        <Container maxWidth="lg">
+          <h3>
+            Sorry, the landing page is currently under construction for v2
+            release.
+          </h3>
+        </Container>
+      </div>
     </div>
   );
 };

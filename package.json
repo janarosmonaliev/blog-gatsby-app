@@ -45,14 +45,15 @@
   "devDependencies": {
     "prettier": "^1.19.1"
   },
-  "homepage": "https://github.com/W3Layouts/gatsby-starter-delog#readme",
+  "homepage": "https://github.com/janarosmonaliev/blog-gatsby-app/",
   "keywords": [
     "gatsby",
     "Janar",
     "Zhanarbek",
+    "Zhanar",
     "Osmonaliev",
     "Stony Brook",
-    "Web Developer"
+    "Software Engineer"
   ],
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
