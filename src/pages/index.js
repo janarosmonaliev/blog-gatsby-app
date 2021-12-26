@@ -1,9 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
-import { useSpring, animated, to } from "@react-spring/web";
-import { useGesture } from "react-use-gesture";
 import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "../components/appBar";
 import GithubGlobeImage from "../images/github-globe-feature.png";
@@ -15,20 +12,23 @@ import {
   Hidden,
   Container,
   Button,
+  Box,
 } from "@material-ui/core";
 import { GitHub, Dribbble, Camera } from "react-feather";
 import TextLoop from "react-text-loop";
 import LandingBackground from "../images/landing-page-gradient.png";
 import LandingAvatar from "../images/landing-avatar.jpg";
+import Avatar from "../images/avatar-animoji.png";
 const useStyles = makeStyles({
   // styles here
   textDisplay: {
+    fontWeight: 700,
     fontFamily: "PP Neue Machine, Inter, sans-serif",
     fontSize: "36px",
     lineHeight: "44px",
     "@media(min-width: 768px)": {
-      fontSize: "56px",
-      lineHeight: "64px",
+      fontSize: "60px",
+      lineHeight: "72px",
     },
   },
   textHeading: {
@@ -45,6 +45,9 @@ const useStyles = makeStyles({
     fontSize: "18px",
     fontWeight: 300,
     lineHeight: "32px",
+  },
+  textSecondary: {
+    color: "#828282",
   },
 });
 
@@ -96,7 +99,7 @@ function HelmetMeta({ website, ...props }) {
 }
 
 const IndexPage = ({ data: { site } }) => {
-  // const [themeDark, setTheme] = useState(theme);
+  const classes = useStyles();
   return (
     <div>
       <HelmetMeta website={site} />
@@ -105,10 +108,38 @@ const IndexPage = ({ data: { site } }) => {
       </div>
       <div id="landing-wrapper">
         <Container maxWidth="lg">
-          <h3>
-            Sorry, the landing page is currently under construction for v2
-            release.
-          </h3>
+          {/* NOTE Welcome page area */}
+          <Box mt={10} mb={30}>
+            <Box mb={3}>
+              <img
+                src={Avatar}
+                className="img-avatar-animoji"
+                loading="lazy"
+                width="101px"
+                height="101px"
+                alt="Zhanar's animoji avatar"
+              ></img>
+            </Box>
+            <h1 className={classes.textDisplay}>
+              Hi, I'm Zhanar{" "}
+              <span className={classes.textSecondary}>(Janar)</span>
+              <br />I{" "}
+              <TextLoop
+                delay={300}
+                mask={true}
+                interval={2000}
+                // springConfig={{ stiffness: 180, damping: 10 }}
+              >
+                <span className={"text-highlight"}>develop</span>
+                <span className={"text-highlight"}>design</span>
+                <span className={"text-highlight"}>create</span>
+              </TextLoop>{" "}
+              user-friendly products.
+            </h1>
+          </Box>
+          <Box>
+            <h1 className={classes.textHeading}>Projects</h1>
+          </Box>
         </Container>
       </div>
     </div>
