@@ -3,24 +3,12 @@ import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
 import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "../components/appBar";
-import GithubGlobeImage from "../images/github-globe-feature.png";
-import TinyDeskImage from "../images/tinydesk-feature.png";
-import {
-  Grid,
-  SvgIcon,
-  Tooltip,
-  Hidden,
-  Container,
-  Button,
-  Box,
-  Paper,
-} from "@material-ui/core";
-import { GitHub, Dribbble, Camera } from "react-feather";
+import { Grid, Hidden, Container, Box, Paper } from "@material-ui/core";
 import TextLoop from "react-text-loop";
-import LandingBackground from "../images/landing-page-gradient.png";
 import LandingAvatar from "../images/landing-avatar.jpg";
 import Avatar from "../images/avatar-animoji.png";
 import { withStyles } from "@material-ui/styles";
+import ProjectsModule from "../components/projects-module";
 const useStyles = makeStyles({
   // styles here
   textDisplay: {
@@ -45,13 +33,6 @@ const useStyles = makeStyles({
   },
   textSecondary: {
     color: "#828282",
-  },
-  paperTinyDesk: {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0)), url(${TinyDeskImage})`,
-    backgroundRepeat: false,
-    backgroundSize: "cover",
-    backgroundPosition: "top center",
   },
 });
 
@@ -145,9 +126,9 @@ const IndexPage = ({ data: { site } }) => {
                 interval={2000}
                 springConfig={{ stiffness: 200, damping: 15 }}
               >
-                <span className={"text-highlight"}>develop</span>
-                <span className={"text-highlight"}>design</span>
-                <span className={"text-highlight"}>create</span>
+                <span className={"text-primary"}>develop</span>
+                <span className={"text-primary"}>design</span>
+                <span className={"text-primary"}>create</span>
               </TextLoop>{" "}
               user-friendly products.
             </h1>
@@ -156,11 +137,7 @@ const IndexPage = ({ data: { site } }) => {
           <Box mt={20} mb={30}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <StyledPaper
-                  className="styled-paper"
-                  elevation={0}
-                  // variant="outlined"
-                >
+                <StyledPaper className="styled-paper" elevation={0}>
                   <Grid container spacing={4} alignItems="center">
                     <Grid item xs={12} md={6}>
                       <h1>About me</h1>
@@ -199,24 +176,7 @@ const IndexPage = ({ data: { site } }) => {
 
           <Box mt={20} mb={30}>
             <h1 className={classes.textDisplay}>Projects</h1>
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={6}>
-                <StyledPaper className="styled-paper" elevation={0}>
-                  hi, im stuck here.
-                </StyledPaper>
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <StyledPaper
-                  className={
-                    classes.paperTinyDesk + " styled-paper text-center"
-                  }
-                  elevation={0}
-                >
-                  {/* <h2 className="text-constant-light">Tiny Desk</h2> */}
-                  {/* <p className="text-constant-light">Hello there</p> */}
-                </StyledPaper>
-              </Grid>
-            </Grid>
+            <ProjectsModule />
           </Box>
         </Container>
       </div>
