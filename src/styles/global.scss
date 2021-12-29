@@ -99,12 +99,16 @@ a {
 
 #navbar-wrapper {
   overflow-x: scroll;
+  background-color: var(--background);
   z-index: 999;
   // position: fixed;
   left: 10px;
   right: 10px;
   max-width: 1260px;
   margin: 0 auto;
+  // .site-header {
+  //   margin-bottom: -2px;
+  // }
 }
 
 #navbar-wrapper::-webkit-scrollbar {

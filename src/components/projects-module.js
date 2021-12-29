@@ -185,7 +185,7 @@ const ProjectsModule = (props) => {
         </Grid>
       </Grid>
       {/* NOTE Space between projects */}
-      <Box my={20} />
+      <Box my={10} />
       {/* SECTION Github Globe */}
       <Grid container spacing={1}>
         <Grid item xs={12} md={6}>
@@ -265,7 +265,7 @@ const ProjectsModule = (props) => {
         </Grid>
       </Grid>
       {/* NOTE Space between projects */}
-      <Box my={20} />
+      <Box my={10} />
     </>
   );
 };
