@@ -87,8 +87,11 @@ const StyledPaper = withStyles({
   root: {
     borderRadius: "30px",
     minHeight: "420px",
-    padding: "2rem",
+    padding: "2rem 1rem 1rem 1rem",
     color: "inherit",
+    "@media(min-width: 960px)": {
+      padding: "2rem",
+    },
   },
 })(Paper);
 
