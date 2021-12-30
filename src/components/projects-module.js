@@ -1,5 +1,4 @@
 import React from "react";
-import { navigate } from "gatsby";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { Grid, Box, Paper, IconButton, SvgIcon } from "@material-ui/core";
 import TinyDeskImage0 from "../images/tinydesk-feature-0.png";
@@ -100,7 +99,7 @@ const StyledLink = (props) => {
       className="link-icon-landing"
       href={props.href}
       target="_blank"
-      referrerPolicy="noreferrer"
+      rel="noreferrer"
     >
       <SvgIcon fontSize="small">{props.icon}</SvgIcon>
     </IconButton>
@@ -135,7 +134,7 @@ const ProjectsModule = (props) => {
                   The project was supervised by{" "}
                   <a
                     href="https://www.alexckuhn.com/about/"
-                    referrerPolicy="noreferrer"
+                    rel="noreferrer"
                     target="_blank"
                   >
                     Alex Kuhn
@@ -164,7 +163,11 @@ const ProjectsModule = (props) => {
                 ></StyledLink>
               </Grid>
               <Grid item xs={12} md={8}>
-                <img src={TinyDeskImage2} className="img-fluid"></img>
+                <img
+                  src={TinyDeskImage2}
+                  className="img-fluid"
+                  alt="TinyDesk architecture"
+                ></img>
               </Grid>
             </Grid>
           </StyledPaper>
@@ -185,7 +188,7 @@ const ProjectsModule = (props) => {
         </Grid>
       </Grid>
       {/* NOTE Space between projects */}
-      <Box my={20} />
+      <Box my={5} />
       {/* SECTION Github Globe */}
       <Grid container spacing={1}>
         <Grid item xs={12} md={6}>
@@ -207,7 +210,7 @@ const ProjectsModule = (props) => {
                   <a
                     href="https://github.com/home"
                     target="_blank"
-                    referrerPolicy="noreferrer"
+                    rel="noreferrer"
                   >
                     Github's homepage
                   </a>
@@ -221,7 +224,7 @@ const ProjectsModule = (props) => {
                   <a
                     href="https://github.com/vasturiano/three-globe"
                     target="_blank"
-                    referrerPolicy="noreferrer"
+                    rel="noreferrer"
                   >
                     three-globe
                   </a>{" "}
@@ -265,7 +268,7 @@ const ProjectsModule = (props) => {
         </Grid>
       </Grid>
       {/* NOTE Space between projects */}
-      <Box my={20} />
+      <Box my={5} />
     </>
   );
 };

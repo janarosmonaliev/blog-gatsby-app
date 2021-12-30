@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import Helmet from "react-helmet";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "../components/appBar";
 import { Grid, Hidden, Container, Box, Paper } from "@material-ui/core";
@@ -9,6 +9,7 @@ import LandingAvatar from "../images/landing-avatar.jpg";
 import Avatar from "../images/avatar-animoji.png";
 import { withStyles } from "@material-ui/styles";
 import ProjectsModule from "../components/projects-module";
+import MiscModule from "../components/misc-module";
 const useStyles = makeStyles({
   // styles here
   textDisplay: {
@@ -153,7 +154,11 @@ const IndexPage = ({ data: { site } }) => {
                       <p className={classes.text}>
                         I have led a team of students as a Designer and a Lead
                         Developer to create{" "}
-                        <a href="https://www.tinydesk.me" target="_blank">
+                        <a
+                          href="https://www.tinydesk.me"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           TinyDesk
                         </a>{" "}
                         - a web application to help you manage your bookmarks
@@ -169,6 +174,7 @@ const IndexPage = ({ data: { site } }) => {
                       <img
                         src={LandingAvatar}
                         className="img-fluid inner-box"
+                        alt="Zhanar Osmonaliev"
                       ></img>
                     </Grid>
                   </Grid>
@@ -177,9 +183,14 @@ const IndexPage = ({ data: { site } }) => {
             </Grid>
           </Box>
 
-          <Box mt={20} mb={30}>
+          <Box mt={20} mb={20}>
             <h1 className={classes.textDisplay}>Projects</h1>
             <ProjectsModule />
+          </Box>
+
+          <Box mt={20} mb={20}>
+            <h1 className={classes.textDisplay}>More</h1>
+            <MiscModule />
           </Box>
         </Container>
       </div>
