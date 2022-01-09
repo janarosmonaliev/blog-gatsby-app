@@ -58,22 +58,29 @@ const StyledCard = (props) => {
   const classes = useStyles();
   return (
     <div>
-      <MiscStyledPaper elevation={0} className={props.class}>
-        <div className={classes.styledCard}>
-          <div className={classes.styledCardContent}>
-            <h2 className={classes.cardTitle}>{props.title}</h2>
-            <p className={classes.cardText}>{props.description}</p>
-            <a
-              className={classes.cardActionText}
-              rel="noreferrer"
-              href={props.href}
-              target="_blank"
-            >
-              {props.linkText} {"->"}
-            </a>
+      <a
+        rel="noreferrer"
+        href={props.href}
+        target="_blank"
+        className="wrapper-link"
+      >
+        <MiscStyledPaper elevation={0} className={props.class}>
+          <div className={classes.styledCard}>
+            <div className={classes.styledCardContent}>
+              <h2 className={classes.cardTitle}>{props.title}</h2>
+              <p className={classes.cardText}>{props.description}</p>
+              <a
+                className={classes.cardActionText}
+                rel="noreferrer"
+                href={props.href}
+                target="_blank"
+              >
+                {props.linkText} {"->"}
+              </a>
+            </div>
           </div>
-        </div>
-      </MiscStyledPaper>
+        </MiscStyledPaper>
+      </a>
     </div>
   );
 };

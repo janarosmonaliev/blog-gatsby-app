@@ -163,11 +163,18 @@ const ProjectsModule = (props) => {
                 ></StyledLink>
               </Grid>
               <Grid item xs={12} md={8}>
-                <img
-                  src={TinyDeskImage2}
-                  className="img-fluid"
-                  alt="TinyDesk architecture"
-                ></img>
+                <a
+                  className="wrapper-link"
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://www.behance.net/gallery/125950519/TinyDesk-Product-Design"
+                >
+                  <img
+                    src={TinyDeskImage2}
+                    className="img-fluid"
+                    alt="TinyDesk architecture"
+                  ></img>
+                </a>
               </Grid>
             </Grid>
           </StyledPaper>
@@ -260,11 +267,18 @@ const ProjectsModule = (props) => {
           </StyledPaper>
         </Grid>
         <Grid item xs={12} md={6}>
-          <StyledPaper
-            classes={{ root: classes.halfSingleRight }}
-            className={classes.githubGlobe + " styled-paper"}
-            elevation={0}
-          ></StyledPaper>
+          <a
+            className="wrapper-link"
+            rel="noreferrer"
+            target="_blank"
+            href="https://janarosmonaliev.github.io/github-globe/"
+          >
+            <StyledPaper
+              classes={{ root: classes.halfSingleRight }}
+              className={classes.githubGlobe + " styled-paper"}
+              elevation={0}
+            ></StyledPaper>
+          </a>
         </Grid>
       </Grid>
       {/* NOTE Space between projects */}
