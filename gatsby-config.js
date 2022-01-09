@@ -30,9 +30,9 @@ module.exports = {
               noInlineHighlight: false,
             },
           },
-          {
-            resolve: "gatsby-remark-emojis",
-          },
+          // {
+          // resolve: "gatsby-remark-emojis",
+          // },
         ],
       },
     },
@@ -47,7 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Zhanarbek Osmonaliev | Personal Blog`,
+        name: `Zhanar Osmonaliev | Personal Blog`,
         short_name: `Perosonal Blog`,
         start_url: `/`,
         background_color: `#fff`,
@@ -57,11 +57,19 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
+    // {
+    //   resolve: `gatsby-plugin-material-ui`,
+    //   options: {
+    //     stylesProvider: {
+    //       injectFirst: true,
+    //     },
+    //   },
+    // },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
     "gatsby-plugin-dark-mode",
     // siteURL is a must for sitemap generation
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
   ],
 };
