@@ -35,6 +35,15 @@ const useStyles = makeStyles({
   textSecondary: {
     color: "#828282",
   },
+  styledPaper: {
+    borderRadius: "30px",
+    minHeight: "420px",
+    padding: "2rem 1rem 1rem 1rem",
+    color: "inherit",
+    "@media(min-width: 960px)": {
+      padding: "2rem",
+    },
+  },
 });
 
 function HelmetMeta({ website, ...props }) {
@@ -84,17 +93,20 @@ function HelmetMeta({ website, ...props }) {
   );
 }
 
-const StyledPaper = withStyles({
-  root: {
-    borderRadius: "30px",
-    minHeight: "420px",
-    padding: "2rem 1rem 1rem 1rem",
-    color: "inherit",
-    "@media(min-width: 960px)": {
-      padding: "2rem",
+const StyledPaper = withStyles(
+  {
+    root: {
+      borderRadius: "30px",
+      minHeight: "420px",
+      padding: "2rem 1rem 1rem 1rem",
+      color: "inherit",
+      "@media(min-width: 960px)": {
+        padding: "2rem",
+      },
     },
   },
-})(Paper);
+  { index: 1 }
+)(Paper);
 
 const IndexPage = ({ data: { site } }) => {
   const classes = useStyles();
@@ -141,7 +153,11 @@ const IndexPage = ({ data: { site } }) => {
           <Box mt={20} mb={30}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <StyledPaper className="styled-paper" elevation={0}>
+                <StyledPaper
+                  // classes={{ root: classes.styledPaper }}
+                  className="styled-paper"
+                  elevation={0}
+                >
                   <Grid container spacing={4} alignItems="center">
                     <Grid item xs={12} md={6}>
                       <h1>About me</h1>

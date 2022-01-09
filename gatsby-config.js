@@ -57,6 +57,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
+    // {
+    //   resolve: `gatsby-plugin-material-ui`,
+    //   options: {
+    //     stylesProvider: {
+    //       injectFirst: true,
+    //     },
+    //   },
+    // },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
     "gatsby-plugin-dark-mode",
