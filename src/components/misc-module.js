@@ -46,7 +46,7 @@ const useStyles = makeStyles({
   },
 });
 
-const StyledPaper = withStyles({
+const MiscStyledPaper = withStyles({
   root: {
     color: "white",
     borderRadius: "20px",
@@ -58,7 +58,7 @@ const StyledCard = (props) => {
   const classes = useStyles();
   return (
     <div>
-      <StyledPaper elevation={0} className={props.class}>
+      <MiscStyledPaper elevation={0} className={props.class}>
         <div className={classes.styledCard}>
           <div className={classes.styledCardContent}>
             <h2 className={classes.cardTitle}>{props.title}</h2>
@@ -73,7 +73,7 @@ const StyledCard = (props) => {
             </a>
           </div>
         </div>
-      </StyledPaper>
+      </MiscStyledPaper>
     </div>
   );
 };

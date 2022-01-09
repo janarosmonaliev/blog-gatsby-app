@@ -35,7 +35,7 @@ const useStyles = makeStyles({
   textSecondary: {
     color: "#828282",
   },
-  styledPaper: {
+  customPaper: {
     borderRadius: "30px",
     minHeight: "420px",
     padding: "2rem 1rem 1rem 1rem",
@@ -93,7 +93,7 @@ function HelmetMeta({ website, ...props }) {
   );
 }
 
-const StyledPaper = withStyles(
+const CustomPaper = withStyles(
   {
     root: {
       borderRadius: "30px",
@@ -153,8 +153,8 @@ const IndexPage = ({ data: { site } }) => {
           <Box mt={20} mb={30}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <StyledPaper
-                  // classes={{ root: classes.styledPaper }}
+                <CustomPaper
+                  // classes={{ root: classes.CustomPaper }}
                   className="styled-paper"
                   elevation={0}
                 >
@@ -194,7 +194,7 @@ const IndexPage = ({ data: { site } }) => {
                       ></img>
                     </Grid>
                   </Grid>
-                </StyledPaper>
+                </CustomPaper>
               </Grid>
             </Grid>
           </Box>
