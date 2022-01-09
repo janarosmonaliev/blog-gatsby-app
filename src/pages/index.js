@@ -104,8 +104,8 @@ const CustomPaper = withStyles(
         padding: "2rem",
       },
     },
-  },
-  { index: 1 }
+  }
+  // { index: 1 }
 )(Paper);
 
 const IndexPage = ({ data: { site } }) => {
