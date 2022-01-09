@@ -12,7 +12,7 @@ import ProjectsModule from "../components/projects-module";
 import MiscModule from "../components/misc-module";
 const useStyles = makeStyles({
   // styles here
-  textDisplay: {
+  textDisplayHeading: {
     fontWeight: 700,
     fontFamily: "PP Neue Machine, Inter, sans-serif",
     fontSize: "36px",
@@ -130,7 +130,7 @@ const IndexPage = ({ data: { site } }) => {
                 alt="Zhanar's animoji avatar"
               ></img>
             </Box>
-            <h1 className={classes.textDisplay}>
+            <h1 className={classes.textDisplayHeading}>
               Hi, I'm Zhanar{" "}
               <Hidden smDown>
                 <span className={classes.textSecondary}>(Janar)</span>
@@ -200,12 +200,12 @@ const IndexPage = ({ data: { site } }) => {
           </Box>
 
           <Box mt={20} mb={20}>
-            <h1 className={classes.textDisplay}>Projects</h1>
+            <h1 className={classes.textDisplayHeading}>Projects</h1>
             <ProjectsModule />
           </Box>
 
           <Box mt={20} mb={20}>
-            <h1 className={classes.textDisplay}>More</h1>
+            <h1 className={classes.textDisplayHeading}>More</h1>
             <MiscModule />
           </Box>
         </Container>
