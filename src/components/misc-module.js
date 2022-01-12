@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { Grid, Box, Paper } from "@material-ui/core";
+import { Grid, Paper } from "@material-ui/core";
 import UnsplashCard from "../images/unsplash-card.jpg";
 import FStudioCard from "../images/fstudio-card.jpg";
 

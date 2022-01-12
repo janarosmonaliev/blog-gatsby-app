@@ -5,6 +5,7 @@ import TinyDeskImage0 from "../images/tinydesk-feature-0.png";
 import TinyDeskImage1 from "../images/tinydesk-feature-1.png";
 import TinyDeskImage2 from "../images/tinydesk-feature-2.png";
 import GithubGlobeImage from "../images/github-globe-feature.png";
+import CrimeDashboard from "../images/crime-data-feature.png";
 import { Dribbble, ExternalLink, GitHub, BookOpen } from "react-feather";
 
 const useStyles = makeStyles({
@@ -14,6 +15,15 @@ const useStyles = makeStyles({
   },
   githubGlobe: {
     backgroundImage: `url(${GithubGlobeImage})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+    "@media(min-width: 960px)": {
+      backgroundSize: "cover",
+    },
+  },
+  crimeDashboard: {
+    backgroundImage: `url(${CrimeDashboard})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center center",
@@ -82,7 +92,7 @@ const useStyles = makeStyles({
 
 const StyledPaper = withStyles({
   root: {
-    minHeight: "450px",
+    minHeight: "420px",
     padding: "2rem 1rem 2rem 1rem",
     color: "inherit",
     "@media(min-width: 960px)": {
@@ -208,7 +218,7 @@ const ProjectsModule = (props) => {
               container
               spacing={0}
               alignItems="center"
-              style={{ minHeight: "450px" }}
+              style={{ minHeight: "420px" }}
             >
               <Grid item xs={12}>
                 <h1>Github Globe</h1>
@@ -283,6 +293,76 @@ const ProjectsModule = (props) => {
       </Grid>
       {/* NOTE Space between projects */}
       <Box my={5} />
+      {/* SECTION Crime Visualization Project */}
+      <Grid container spacing={1}>
+        <Grid item xs={12} md={6}>
+          <StyledPaper
+            classes={{ root: classes.halfSingleLeft }}
+            className="styled-paper"
+            elevation={0}
+          >
+            <Grid
+              container
+              spacing={0}
+              alignItems="center"
+              style={{ minHeight: "420px" }}
+            >
+              <Grid item xs={12}>
+                <h1>Crime Data Visualization</h1>
+                <p className={classes.cardText}>
+                  Data visualization dashboard with brushing and linking
+                  features implemented with{" "}
+                  <span className="text-highlight">D3.js</span>. It features
+                  Manhattan borough crime data from 2019 to 2021 compiled by
+                  NYPD.
+                </p>
+                <p className={classes.cardText}>
+                  Dashboard has filters to display data for specific age group
+                  and gender for both suspects and victims. Interactive map
+                  allows area selection for more detailed insight.
+                </p>
+                <p className={classes.cardText}>
+                  Special thanks to{" "}
+                  <a
+                    href="https://github.com/vasturiano/three-globe"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Klaus Muller
+                  </a>{" "}
+                  for an introduction to data visualization.
+                </p>
+                <StyledLink
+                  href="https://github.com/janarosmonaliev/crime-data-dashboard"
+                  icon={<GitHub />}
+                />
+                <StyledLink
+                  href="https://github.com/janarosmonaliev/crime-data-dashboard/blob/master/docs/CSE332_Crime_Data_Visualization_Report-1.pdf"
+                  icon={<BookOpen />}
+                />
+                <StyledLink
+                  href="https://janarosmonaliev.github.io/crime-data-dashboard/"
+                  icon={<ExternalLink />}
+                />
+              </Grid>
+            </Grid>
+          </StyledPaper>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <a
+            className="wrapper-link"
+            rel="noreferrer"
+            target="_blank"
+            href="https://janarosmonaliev.github.io/crime-data-dashboard/"
+          >
+            <StyledPaper
+              classes={{ root: classes.halfSingleRight }}
+              className={classes.crimeDashboard + " styled-paper"}
+              elevation={0}
+            ></StyledPaper>
+          </a>
+        </Grid>
+      </Grid>
     </>
   );
 };
