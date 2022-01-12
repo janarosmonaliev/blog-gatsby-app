@@ -67,11 +67,13 @@ export const pageQuery = graphql`
   query blogPageQuery {
     site {
       siteMetadata {
-        title
-        description
         viewport
         image
         url
+        blog {
+          title
+          description
+        }
       }
     }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
