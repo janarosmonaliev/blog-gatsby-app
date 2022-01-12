@@ -624,3 +624,9 @@ h2 {
 .link-icon-landing {
   color: var(--text-color) !important;
 }
+.wrapper-link {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}

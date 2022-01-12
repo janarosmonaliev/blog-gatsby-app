@@ -80,7 +80,7 @@ export default function ContactPage({ data: { site } }) {
         <title>Contact — {site.siteMetadata.title}</title>
         <meta
           name="description"
-          content={"Contact page of " + site.siteMetadata.description}
+          content={"Contact page of " + site.siteMetadata.title}
         />
       </Helmet>
       <div className={"two-grids -contact "}>
